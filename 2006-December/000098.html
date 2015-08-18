@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Libsecondlife-dev] Terraformation Messages
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/libsecondlife-dev/2006-December/index.html" >
+   <LINK REL="made" HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20Terraformation%20Messages&In-Reply-To=%3C4593655F.4030902%40wsu.edu%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000097.html">
+   <LINK REL="Next"  HREF="000103.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Libsecondlife-dev] Terraformation Messages</H1>
+    <B>John Hurliman</B> 
+    <A HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20Terraformation%20Messages&In-Reply-To=%3C4593655F.4030902%40wsu.edu%3E"
+       TITLE="[Libsecondlife-dev] Terraformation Messages">jhurliman at wsu.edu
+       </A><BR>
+    <I>Thu Dec 28 07:34:07 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000097.html">[Libsecondlife-dev] Terraformation Messages
+</A></li>
+        <LI>Next message: <A HREF="000103.html">[Libsecondlife-dev] Cache Delete Message
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#98">[ date ]</a>
+              <a href="thread.html#98">[ thread ]</a>
+              <a href="subject.html#98">[ subject ]</a>
+              <a href="author.html#98">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE><A HREF="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">sbg at acw.com</A> wrote:
+&gt;<i> 1) Is all of terraformation tied up in the TerrainBase and TerrainDetail
+</I>&gt;<i> fields of RegionHandshake?
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>
+You can see in the protocol file 
+(<A HREF="http://www.libsecondlife.org/template/release/1.13.0.10.txt">http://www.libsecondlife.org/template/release/1.13.0.10.txt</A>) 
+TerrainBase* and TerrainDetail* fields are LLUUIDs, they point to 
+terrain textures that apply to the entire sim. The TerrainStartHeight* 
+and TerrainHeightRange* fields describe at what elevations those 
+textures apply, and the implementation in the client uses a pretty fancy 
+terrain splatting algorithm that uses those values as seed values 
+combined with some alpha masks to generate more realistic looking 
+terrain texture blends. If by terraformation you mean the heightmap of 
+the region, you need LayerData packets. 
+<A HREF="http://www.libsecondlife.org/protocol/index.php/LayerData">http://www.libsecondlife.org/protocol/index.php/LayerData</A> for more 
+information on those, which will answer your next question.
+
+&gt;<i> 2) Has anybody decoded these byte blobs?
+</I>&gt;<i>   
+</I>
+Partially, see above. We are awaiting a third party contribution as well 
+that should give us some more progress.
+
+&gt;<i> 3) Are there any viewer -&gt; sim messages that updates these values when one
+</I>&gt;<i> does terraformation?  The logical candidate is ParcelPropertiesUpdate but
+</I>&gt;<i> it doesn't seem to concern itself with TerrainBase and TerrainDetail.
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>
+I don't remember off the top of my head which packet, but the client 
+doesn't get the ability to upload LayerData packets or describe exactly 
+how to terraform the terrain. The region owner uploads the original RAW 
+terrain file, and parcel owners can terraform by sending commands to the 
+sim which amount to &quot;use this brush size and this tool, and push in this 
+direction for this duration of time and we'll see what happens&quot;.
+
+&gt;<i> Thanks for any insight.
+</I>&gt;<i>
+</I>&gt;<i> Cheers, Scott
+</I>&gt;<i>   
+</I>
+Thanks for keeping the mailing list active :-)
+
+John
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000097.html">[Libsecondlife-dev] Terraformation Messages
+</A></li>
+	<LI>Next message: <A HREF="000103.html">[Libsecondlife-dev] Cache Delete Message
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#98">[ date ]</a>
+              <a href="thread.html#98">[ thread ]</a>
+              <a href="subject.html#98">[ subject ]</a>
+              <a href="author.html#98">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">More information about the Libsecondlife-dev
+mailing list</a><br>
+</body></html>

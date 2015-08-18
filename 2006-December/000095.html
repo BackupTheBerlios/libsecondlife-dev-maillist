@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Libsecondlife-dev] Boot Sequence State Machine(s)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/libsecondlife-dev/2006-December/index.html" >
+   <LINK REL="made" HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20Boot%20Sequence%20State%20Machine%28s%29&In-Reply-To=%3C1041.209.150.51.147.1167260112.squirrel%40www.acw.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000094.html">
+   <LINK REL="Next"  HREF="000096.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Libsecondlife-dev] Boot Sequence State Machine(s)</H1>
+    <B>sbg at acw.com</B> 
+    <A HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20Boot%20Sequence%20State%20Machine%28s%29&In-Reply-To=%3C1041.209.150.51.147.1167260112.squirrel%40www.acw.com%3E"
+       TITLE="[Libsecondlife-dev] Boot Sequence State Machine(s)">sbg at acw.com
+       </A><BR>
+    <I>Wed Dec 27 23:55:12 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000094.html">[Libsecondlife-dev] Boot Sequence State Machine(s)
+</A></li>
+        <LI>Next message: <A HREF="000096.html">[Libsecondlife-dev] Terraformation Messages
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#95">[ date ]</a>
+              <a href="thread.html#95">[ thread ]</a>
+              <a href="subject.html#95">[ subject ]</a>
+              <a href="author.html#95">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Yes, and that's exactly what I'm imagining is a state-machine driven boot
+sequence.  You can watch the server proceed serially through all the
+LayerData types from 1 to 55, sometimes doing nothing at a particular type
+and moving quickly onto the next and sometimes dropping off some
+ObjectUpdates, ImageDatas, AgentAnimations and so forth at a particular
+level.
+
+I was imagining that the client was following along in synchrony and would
+stop at a level (by not ACKing) to make additional requests at that level.
+ This is the state machine that my addled mind's eye was trying to see in
+the fog.
+
+Cheers, Scott
+
+&gt;<i> What is your definition of idle? At that point the server would be
+</I>&gt;<i> sending the client LayerData packets to describe the terrain/wind/clouds
+</I>&gt;<i> and ObjectUpdate + other object packets to describe the surrounding
+</I>&gt;<i> world, along with handling any requests from the client for more data. I
+</I>&gt;<i> guess I'm not following what you are trying to find?
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Libsecondlife-dev mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">Libsecondlife-dev at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">https://lists.berlios.de/mailman/listinfo/libsecondlife-dev</A>
+</I>&gt;<i>
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000094.html">[Libsecondlife-dev] Boot Sequence State Machine(s)
+</A></li>
+	<LI>Next message: <A HREF="000096.html">[Libsecondlife-dev] Terraformation Messages
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#95">[ date ]</a>
+              <a href="thread.html#95">[ thread ]</a>
+              <a href="subject.html#95">[ subject ]</a>
+              <a href="author.html#95">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">More information about the Libsecondlife-dev
+mailing list</a><br>
+</body></html>

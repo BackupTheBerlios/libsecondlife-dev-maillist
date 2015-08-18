@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Libsecondlife-dev] I'll be back, soon. (Alpha Zaius)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/libsecondlife-dev/2007-April/index.html" >
+   <LINK REL="made" HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20I%27ll%20be%20back%2C%20soon.%20%28Alpha%20Zaius%29&In-Reply-To=%3Ceddb9050704030709g69cfbadw63028c74dc39616%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000163.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Libsecondlife-dev] I'll be back, soon. (Alpha Zaius)</H1>
+    <B>Jesse Nesbitt</B> 
+    <A HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20I%27ll%20be%20back%2C%20soon.%20%28Alpha%20Zaius%29&In-Reply-To=%3Ceddb9050704030709g69cfbadw63028c74dc39616%40mail.gmail.com%3E"
+       TITLE="[Libsecondlife-dev] I'll be back, soon. (Alpha Zaius)">mindtriggerz at gmail.com
+       </A><BR>
+    <I>Tue Apr  3 16:09:03 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000163.html">[Libsecondlife-dev] I'll be back, soon. (Alpha Zaius)
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#164">[ date ]</a>
+              <a href="thread.html#164">[ thread ]</a>
+              <a href="subject.html#164">[ subject ]</a>
+              <a href="author.html#164">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>That is pretty neat. I just got my EC2 account (stalled signing up for S3
+for a few months), so I'd be glad to help.
+
+On 4/3/07, Jeff Barr &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">jeff at vertexdev.com</A>&gt; wrote:
+&gt;<i>
+</I>&gt;<i> From: &quot;Alpha Zaius&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">alpha.zaius at gmail.com</A>&gt;:
+</I>&gt;<i> &gt; The server is scalable. In fact, it will be comprised of Amazon Web
+</I>&gt;<i> Services
+</I>&gt;<i> &gt; such as S3 and EC2. There will be an array of EC2's handling all the
+</I>&gt;<i> &gt; requests. There will be one EC2 (or regular linux server) that will act
+</I>&gt;<i> as a
+</I>&gt;<i> &gt; DNS and manages the array. It will be efficient in terms that it will
+</I>&gt;<i> track
+</I>&gt;<i> &gt; the demand of the service and open or close EC2 servers appropiately.
+</I>&gt;<i> This
+</I>&gt;<i> &gt; way, it will minimize cost while maximizing stability. Example: Lets say
+</I>&gt;<i> its
+</I>&gt;<i> &gt; a sunday evening and SL just hit peak concurrency. At the same time,
+</I>&gt;<i> 1000
+</I>&gt;<i> &gt; people are running the client with SL. With these clients, over 50
+</I>&gt;<i> requests
+</I>&gt;<i> &gt; per second are coming in to the DNS. The array only holds one EC2, and
+</I>&gt;<i> that
+</I>&gt;<i> &gt; server has a server load of 90% and it is increasing. The master server
+</I>&gt;<i> &gt; (DNS) will then open up a new EC2 and add it to the array and then
+</I>&gt;<i> &gt; distribute requests to the new one through RR DNS. Night is coming
+</I>&gt;<i> along,
+</I>&gt;<i> &gt; and both servers have around .4 CPU load and a total of about 40
+</I>&gt;<i> requests
+</I>&gt;<i> &gt; per second. The primary server will then change the DNS to point to only
+</I>&gt;<i> one
+</I>&gt;<i> &gt; of those servers and then shut down the other one when the DNS
+</I>&gt;<i> proprogates.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Another thing about the server array.. since it is using AWS, we can use
+</I>&gt;<i> S3
+</I>&gt;<i> &gt; to store all the assets privately. The reason why we need EC2s to handle
+</I>&gt;<i> the
+</I>&gt;<i> &gt; assets is to avoid anyone reverse engineering the proxy code and
+</I>&gt;<i> downloading
+</I>&gt;<i> &gt; a lot of assets and reuploading them to SL, sparking another OMG
+</I>&gt;<i> COPYCACHE
+</I>&gt;<i> &gt; thingy. The EC2 servers encrypt the assets with a unique salt and
+</I>&gt;<i> compresses
+</I>&gt;<i> &gt; them down to save us bandwidth and increase delivary speed. I know, it
+</I>&gt;<i> may
+</I>&gt;<i> &gt; be silly.. but tell me what you all think
+</I>&gt;<i> &gt; *****************************************
+</I>&gt;<i> &gt;
+</I>&gt;<i>
+</I>&gt;<i> Wow, that's cool. When I started reading this I was thinking that
+</I>&gt;<i> storing the objects in S3 would
+</I>&gt;<i> be the way to go. Of course you were way ahead of me. I'm looking
+</I>&gt;<i> forward to hearing a lot
+</I>&gt;<i> more about this.
+</I>&gt;<i>
+</I>&gt;<i> Jeff;
+</I>&gt;<i>
+</I>&gt;<i> --
+</I>&gt;<i> * Jeff Barr (RL) / Jeffronius Batra (SL)
+</I>&gt;<i> * RSS Feeds:           <A HREF="http://www.syndic8.com">http://www.syndic8.com</A>
+</I>&gt;<i> * Blog:                <A HREF="http://www.jeff-barr.com">http://www.jeff-barr.com</A>
+</I>&gt;<i> * Amazon Web Services: <A HREF="http://aws.typepad.com">http://aws.typepad.com</A>
+</I>&gt;<i> * Resume:              <A HREF="http://www.syndic8.com/~jeff/resume.html">http://www.syndic8.com/~jeff/resume.html</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Libsecondlife-dev mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">Libsecondlife-dev at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">https://lists.berlios.de/mailman/listinfo/libsecondlife-dev</A>
+</I>&gt;<i>
+</I>
+
+
+-- 
+--Jesse
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/libsecondlife-dev/attachments/20070403/e3ba6673/attachment.html">https://lists.berlios.de/pipermail/libsecondlife-dev/attachments/20070403/e3ba6673/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000163.html">[Libsecondlife-dev] I'll be back, soon. (Alpha Zaius)
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#164">[ date ]</a>
+              <a href="thread.html#164">[ thread ]</a>
+              <a href="subject.html#164">[ subject ]</a>
+              <a href="author.html#164">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">More information about the Libsecondlife-dev
+mailing list</a><br>
+</body></html>

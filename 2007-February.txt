@@ -1,0 +1,104 @@
+From admin at berlios.de  Thu Feb  1 14:26:34 2007
+From: admin at berlios.de (admin at berlios.de)
+Date: Thu, 1 Feb 2007 07:26:34 -0600 (CST)
+Subject: [Libsecondlife-dev] [Bug #10190] Teleport still very buggy
+Message-ID: <200702011326.l11DQY55021476@unicorn.berlios.de>
+
+Bug #10190, was updated on 2007-Feb-01 07:26
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: None
+Status: Open
+Resolution: None
+Bug Group: None
+Priority: 5
+Submitted by: mvoogd
+Assigned to : none
+Summary: Teleport still very buggy
+
+Details: The Teleports are still very buggy. Very often (90%) the 500 and 502 error appears (bad gateway) and 99% of the times when you  try to teleport the whole client gets disconnected. It seems that the teleport always works the first time but after that first time it all change into a nightmare. 50% of the times it still shows up with the error: "Couldnt find region (name)"
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=10190&group_id=7710
+
+
+From admin at berlios.de  Fri Feb  2 21:14:49 2007
+From: admin at berlios.de (admin at berlios.de)
+Date: Fri, 2 Feb 2007 14:14:49 -0600 (CST)
+Subject: [Libsecondlife-dev] [Bug #10190] Teleport still very buggy
+Message-ID: <200702022014.l12KEnun010551@unicorn.berlios.de>
+
+Bug #10190, was updated on 2007-Feb-01 07:26
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: None
+Status: Open
+Resolution: None
+Bug Group: None
+Priority: 5
+Submitted by: mvoogd
+Assigned to : none
+Summary: Teleport still very buggy
+
+Details: The Teleports are still very buggy. Very often (90%) the 500 and 502 error appears (bad gateway) and 99% of the times when you  try to teleport the whole client gets disconnected. It seems that the teleport always works the first time but after that first time it all change into a nightmare. 50% of the times it still shows up with the error: "Couldnt find region (name)"
+
+Follow-Ups:
+
+Date: 2007-Feb-02 14:14
+By: mvoogd
+
+Comment:
+The teleports are working perfectly again since the update yesterday. Thank you guys :)
+-------------------------------------------------------
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=10190&group_id=7710
+
+
+From admin at berlios.de  Sat Feb 10 07:56:28 2007
+From: admin at berlios.de (admin at berlios.de)
+Date: Sat, 10 Feb 2007 00:56:28 -0600 (CST)
+Subject: [Libsecondlife-dev] [Bug #10292] Memory usage
+Message-ID: <200702100656.l1A6uSto001794@unicorn.berlios.de>
+
+Bug #10292, was updated on 2007-Feb-10 00:56
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: None
+Status: Open
+Resolution: None
+Bug Group: Feature Request
+Priority: 5
+Submitted by: mvoogd
+Assigned to : none
+Summary: Memory usage
+
+Details: The memory usage of the lib is pretty bad. The longer you run a program writen with this lib, the more "full" your memory gets till the point that the whole system is going to lockup and or doesnt respond anymore.
+Not sure in what part this might be but this is an issue from the last 2 weeks (or less). I personal think that the lib keeps creating arrays for objects, avatars and or regions (or whatever) without releasing the old ones or something simulair.
+
+I hope this helps
+
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=10292&group_id=7710
+
+
+From jhurliman at wsu.edu  Sun Feb 18 09:10:59 2007
+From: jhurliman at wsu.edu (John Hurliman)
+Date: Sun, 18 Feb 2007 00:10:59 -0800
+Subject: [Libsecondlife-dev] [Fwd: LibSL SVN Access]
+Message-ID: <45D80A13.2090103@wsu.edu>
+
+Can someone fix this? Also lone coder, I think the powers that be want 
+your SL name.
+-------------- next part --------------
+An embedded message was scrubbed...
+From: "Bryan Livingston" <bryanlivingston at gmail.com>
+Subject: LibSL SVN Access
+Date: Sat, 17 Feb 2007 22:17:15 -0700
+Size: 2822
+URL: <https://lists.berlios.de/pipermail/libsecondlife-dev/attachments/20070218/1e9838af/attachment.eml>
+

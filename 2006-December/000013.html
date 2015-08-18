@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Libsecondlife-dev] IndexOutOfRangeException in ZeroDecode	Helpers.cs
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/libsecondlife-dev/2006-December/index.html" >
+   <LINK REL="made" HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20IndexOutOfRangeException%20in%20ZeroDecode%0A%09Helpers.cs&In-Reply-To=%3C1d09f8b80612060455s3fa4fcf2t8f7dd34587997a5a%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000011.html">
+   <LINK REL="Next"  HREF="000014.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Libsecondlife-dev] IndexOutOfRangeException in ZeroDecode	Helpers.cs</H1>
+    <B>Will Buik</B> 
+    <A HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20IndexOutOfRangeException%20in%20ZeroDecode%0A%09Helpers.cs&In-Reply-To=%3C1d09f8b80612060455s3fa4fcf2t8f7dd34587997a5a%40mail.gmail.com%3E"
+       TITLE="[Libsecondlife-dev] IndexOutOfRangeException in ZeroDecode	Helpers.cs">willbuik at gmail.com
+       </A><BR>
+    <I>Wed Dec  6 13:55:52 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000011.html">[Libsecondlife-dev] IndexOutOfRangeException in	ZeroDecode	Helpers.cs
+</A></li>
+        <LI>Next message: <A HREF="000014.html">[Libsecondlife-dev] IndexOutOfRangeException in ZeroDecode	Helpers.cs
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13">[ date ]</a>
+              <a href="thread.html#13">[ thread ]</a>
+              <a href="subject.html#13">[ subject ]</a>
+              <a href="author.html#13">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 12/5/06, John Hurliman &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">jhurliman at wsu.edu</A>&gt; wrote:
+&gt;<i> Will Buik wrote:
+</I>&gt;<i> &gt; I am getting the following error in libsecondlife after about 2 or 3
+</I>&gt;<i> &gt; minutes of use:
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; System.IndexOutOfRangeException was unhandled
+</I>&gt;<i> &gt;   Message=&quot;Index was outside the bounds of the array.&quot;
+</I>&gt;<i> &gt;   Source=&quot;libsecondlife&quot;
+</I>&gt;<i> &gt;   StackTrace:
+</I>&gt;<i> &gt;        at libsecondlife.Helpers.ZeroDecode(Byte[] src, Int32 srclen,
+</I>&gt;<i> &gt; Byte[] dest) in ...\libsecondlife\libsecondlife-cs\Helpers.cs:line 323
+</I>&gt;<i> &gt;        at libsecondlife.Packets.Packet.BuildPacket(Byte[] bytes,
+</I>&gt;<i> &gt; Int32&amp; packetEnd, Byte[] zeroBuffer) in
+</I>&gt;<i> &gt; ...\libsecondlife\libsecondlife-cs\_Packets_.cs:line 2064
+</I>&gt;<i> &gt;        at libsecondlife.Simulator.OnReceivedData (IAsyncResult result)
+</I>&gt;<i> &gt; in ...\libsecondlife\libsecondlife-cs\NetworkManager.cs:line 430
+</I>&gt;<i> &gt;        at System.Net.LazyAsyncResult.Complete(IntPtr userToken)
+</I>&gt;<i> &gt;        at System.Net.ContextAwareResult.CompleteCallback(Object state)
+</I>&gt;<i> &gt;        at System.Threading.ExecutionContext.Run(ExecutionContext
+</I>&gt;<i> &gt; executionContext, ContextCallback callback, Object state)
+</I>&gt;<i> &gt;        at System.Net.ContextAwareResult.Complete(IntPtr userToken)
+</I>&gt;<i> &gt;        at System.Net.LazyAsyncResult.ProtectedInvokeCallback (Object
+</I>&gt;<i> &gt; result, IntPtr userToken)
+</I>&gt;<i> &gt;        at
+</I>&gt;<i> &gt; System.Net.Sockets.BaseOverlappedAsyncResult.CompletionPortCallback(UInt32
+</I>&gt;<i> &gt; errorCode, UInt32 numBytes, NativeOverlapped* nativeOverlapped)
+</I>&gt;<i> &gt;        at
+</I>&gt;<i> &gt; System.Threading._IOCompletionCallback.PerformIOCompletionCallback
+</I>&gt;<i> &gt; (UInt32 errorCode, UInt32 numBytes, NativeOverlapped* pOVERLAP)
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; I am using revision 677 now but I was getting the error in some
+</I>&gt;<i> &gt; previous revisions as well.  Sorry if this is the wrong place to bring
+</I>&gt;<i> &gt; this up.
+</I>&gt;<i> &gt; ------------------------------------------------------------------------
+</I>&gt;<i>
+</I>&gt;<i> I committed some additional error catching facilities to ZeroDecode()
+</I>&gt;<i> that can help to catch this issue, can you run with the latest code and
+</I>&gt;<i> report back with the output? Also, what platform and OS are you on?
+</I>&gt;<i> Big/little-endian, and OSX/Linux/Windows?
+</I>&gt;<i>
+</I>&gt;<i> John Hurliman
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Libsecondlife-dev mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">Libsecondlife-dev at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">https://lists.berlios.de/mailman/listinfo/libsecondlife-dev</A>
+</I>&gt;<i>
+</I>
+
+I am now getting a new error with the new revision (685).
+I am using Windows Vista and compiling with Visual Studio 2005 (8.0.50727.42).
+
+I don't know if this could have a role in it but the program uses
+several SecondLife clients at once and I have little bandwidth.
+
+libsecondlife.Packets.MalformedDataException was unhandled
+  Message=&quot;Error in the application.&quot;
+  Source=&quot;libsecondlife&quot;
+  StackTrace:
+       at libsecondlife.Packets.ObjectUpdatePacket.ObjectDataBlock..ctor(Byte[]
+bytes, Int32&amp; i) in C:\Users\Will
+Buik\Desktop\libsecondlife\libsecondlife-cs\_Packets_.cs:line 90070
+       at libsecondlife.Packets.ObjectUpdatePacket..ctor(Header head,
+Byte[] bytes, Int32&amp; i) in C:\Users\Will
+Buik\Desktop\libsecondlife\libsecondlife-cs\_Packets_.cs:line 90309
+       at libsecondlife.Packets.Packet.BuildPacket(Byte[] bytes,
+Int32&amp; packetEnd, Byte[] zeroBuffer) in C:\Users\Will
+Buik\Desktop\libsecondlife\libsecondlife-cs\_Packets_.cs:line 2618
+       at libsecondlife.Simulator.OnReceivedData(IAsyncResult result)
+in C:\Users\Will
+Buik\Desktop\libsecondlife\libsecondlife-cs\NetworkManager.cs:line 430
+       at System.Net.LazyAsyncResult.Complete(IntPtr userToken)
+       at System.Net.ContextAwareResult.CompleteCallback(Object state)
+       at System.Threading.ExecutionContext.Run(ExecutionContext
+executionContext, ContextCallback callback, Object state)
+       at System.Net.ContextAwareResult.Complete(IntPtr userToken)
+       at System.Net.LazyAsyncResult.ProtectedInvokeCallback(Object
+result, IntPtr userToken)
+       at System.Net.Sockets.BaseOverlappedAsyncResult.CompletionPortCallback(UInt32
+errorCode, UInt32 numBytes, NativeOverlapped* nativeOverlapped)
+       at System.Threading._IOCompletionCallback.PerformIOCompletionCallback(UInt32
+errorCode, UInt32 numBytes, NativeOverlapped* pOVERLAP)
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000011.html">[Libsecondlife-dev] IndexOutOfRangeException in	ZeroDecode	Helpers.cs
+</A></li>
+	<LI>Next message: <A HREF="000014.html">[Libsecondlife-dev] IndexOutOfRangeException in ZeroDecode	Helpers.cs
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13">[ date ]</a>
+              <a href="thread.html#13">[ thread ]</a>
+              <a href="subject.html#13">[ subject ]</a>
+              <a href="author.html#13">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">More information about the Libsecondlife-dev
+mailing list</a><br>
+</body></html>

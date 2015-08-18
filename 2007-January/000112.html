@@ -1,0 +1,322 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Libsecondlife-dev] [Bug #9849] TestClient OnInstantMessage problem
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/libsecondlife-dev/2007-January/index.html" >
+   <LINK REL="made" HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20%5BBug%20%239849%5D%20TestClient%20OnInstantMessage%20problem&In-Reply-To=%3C200701051110.l05BATNF008012%40unicorn.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000111.html">
+   <LINK REL="Next"  HREF="000113.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Libsecondlife-dev] [Bug #9849] TestClient OnInstantMessage problem</H1>
+    <B>admin at berlios.de</B> 
+    <A HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20%5BBug%20%239849%5D%20TestClient%20OnInstantMessage%20problem&In-Reply-To=%3C200701051110.l05BATNF008012%40unicorn.berlios.de%3E"
+       TITLE="[Libsecondlife-dev] [Bug #9849] TestClient OnInstantMessage problem">admin at berlios.de
+       </A><BR>
+    <I>Fri Jan  5 12:10:29 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000111.html">[Libsecondlife-dev] [Bug #9724] TestClient SetAppearanceCommand	replicates code
+</A></li>
+        <LI>Next message: <A HREF="000113.html">[Libsecondlife-dev] [Bug #9872] RSS feed for the libsecondlife.org	phpBB forum
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#112">[ date ]</a>
+              <a href="thread.html#112">[ thread ]</a>
+              <a href="subject.html#112">[ subject ]</a>
+              <a href="author.html#112">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Bug #9849, was updated on 2006-Dec-31 11:08
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: None
+Status: Closed
+Resolution: Fixed
+Bug Group: Buggy Code
+Priority: 3
+Submitted by: jhurliman
+Assigned to : jhurliman
+Summary: TestClient OnInstantMessage problem
+
+Details: WARNING: Tried to send a PacketAck on a closed socket
+WARNING: Tried to send a PacketAck on a closed socket
+WARNING: Tried to send a PacketAck on a closed socket
+WARNING: Tried to send a PacketAck on a closed socket
+WARNING: Tried to send a CompletePingCheck on a closed socket
+WARNING: Tried to send a CompletePingCheck on a closed socket
+WARNING: Tried to send a CompletePingCheck on a closed socket
+WARNING: Tried to send a CompletePingCheck on a closed socket
+INFO: Received a duplicate SimulatorViewerTimeMessage, sequence=1999, resent=Yes, Inbox.Count=100, NeedAck.Co                 unt=2
+INFO: Received a duplicate SimulatorViewerTimeMessage, sequence=2259, resent=Yes, Inbox.Count=100, NeedAck.Co                 unt=2
+INFO: Received a duplicate SimulatorViewerTimeMessage, sequence=2204, resent=Yes, Inbox.Count=100, NeedAck.Co                 unt=3
+INFO: Received a duplicate SimulatorViewerTimeMessage, sequence=1943, resent=Yes, Inbox.Count=100, NeedAck.Co                 unt=3
+INFO: Received a duplicate SimulatorViewerTimeMessage, sequence=2101, resent=Yes, Inbox.Count=100, NeedAck.Co                 unt=3
+INFO: Received a duplicate SimulatorViewerTimeMessage, sequence=1923, resent=Yes, Inbox.Count=100, NeedAck.Co                 unt=3
+INFO: Received a duplicate SimulatorViewerTimeMessage, sequence=2058, resent=Yes, Inbox.Count=100, NeedAck.Co                 unt=3
+INFO: Received a duplicate SimulatorViewerTimeMessage, sequence=2213, resent=Yes, Inbox.Count=100, NeedAck.Co                 unt=3
+INFO: Received a duplicate SimulatorViewerTimeMessage, sequence=2289, resent=Yes, Inbox.Count=100, NeedAck.Co                 unt=3
+INFO: Received a duplicate SimulatorViewerTimeMessage, sequence=2284, resent=Yes, Inbox.Count=100, NeedAck.Co                 unt=3
+WARNING: Tried to send a RequestMultipleObjects on a closed socket
+WARNING: Tried to send a RequestMultipleObjects on a closed socket
+WARNING: Tried to send a RequestMultipleObjects on a closed socket
+WARNING: Tried to send a RequestMultipleObjects on a closed socket
+WARNING: Tried tWARNING: Tried to send a CompletePingCheck on a closed socket
+WARNING: Tried to send a CompletePingCheck on a closed socket
+WARNING: Tried to send a CompletePingCheck on a closed socket
+WARNING: Tried to send a CompletePingCheck on a closed socket
+o send a CompletePingCheck on a closed socket
+WARNING: Tried to send a PacketAck on a closed socket
+
+** (TestClient.exe:24807): WARNING **: unknown address family 0xffda
+INFO: 64.129.40.51:13003 socket is closed, shutting down Anarchia
+
+** (TestClient.exe:24807): WARNING **: unknown address family 0xffda
+INFO: 64.129.40.51:13003 socket is closed, shutting down Anarchia
+
+** (TestClient.exe:24807): WARNING **: unknown address family 0xffda
+INFO: 64.129.40.51:13003 socket is closed, shutting down Anarchia
+
+** (TestClient.exe:24807): WARNING **: unknown address family 0xffda
+INFO: 64.129.40.51:13003 socket is closed, shutting down Anarchia
+INFO: Received a duplicate KillObject, sequence=6887, resent=Yes, Inbox.Count=100, NeedAck.Count=1
+
+** (TestClient.exe:24807): WARNING **: unknown address family 0xffda
+INFO: 64.129.40.51:13003 socket is closed, shutting down Anarchia
+
+** (TestClient.exe:24807): WARNING **: unknown address family 0xffda
+INFO: 64.129.40.51:13003 socket is closed, shutting down Anarchia
+INFO: Resending CompletePingCheck packet, 4516ms have passed
+&lt;IM&gt;Inyur Orbit (not in group): Vegas New Years Party.|Yes..New Years is apon us here at Las Vegas, come on o                 ut and spend the last day of 2006 with me.  My day is a day ahead because of my time zone.
+
+@aa6765cd389d4b87a637daa037690159:&lt;162.203, 112.301, 25.4255&gt;
+INFO: Resending RequestMultipleObjects packet, 4241ms have passed
+INFO: Resending RequestMultipleObjects packet, 4372ms have passed
+INFO: Resending RequestMultipleObjects packet, 4370ms have passed
+INFO: Resending RequestMultipleObjects packet, 4153ms have passed
+INFO: Resending CompletePingCheck packet, 4225ms have passed
+INFO: Resending RequestMultipleObjects packet, 4399ms have passed
+INFO: Resending RequestMultipleObjects packet, 4398ms have passed
+INFO: Resending RequestMultipleObjects packet, 4396ms have passed
+INFO: Resending RequestMultipleObjects packet, 4393ms have passed
+INFO: Resending RequestMultipleObjects packet, 4392ms have passed
+INFO: Resending RequestMultipleObjects packet, 4388ms have passed
+INFO: Resending RequestMultipleObjects packet, 4386ms have passed
+INFO: Resending CompletePingCheck packet, 4398ms have passed
+INFO: Resending CompletePingCheck packet, 4075ms have passed
+INFO: Resending CompletePingCheck packet, 4020ms have passed
+INFO: Resending CompletePingCheck packet, 4023ms have passed
+INFO: Resending CompletePingCheck packet, 4012ms have passed
+INFO: Resending CompletePingCheck packet, 4348ms have passed
+INFO: Resending CompletePingCheck packet, 4283ms have passed
+INFO: Resending CompletePingCheck packet, 4225ms have passed
+INFO: Resending CompletePingCheck packet, 4476ms have passed
+INFO: Resending CompletePingCheck packet, 4438ms have passed
+INFO: Resending RequestMultipleObjects packet, 4412ms have passed
+INFO: Resending CompletePingCheck packet, 4073ms have passed
+INFO: Resending CompletePingCheck packet, 4401ms have passed
+INFO: Resending CompletePingCheck packet, 4397ms have passed
+INFO: Resending CompletePingCheck packet, 4257ms have passed
+INFO: Resending CompletePingCheck packet, 4291ms have passed
+INFO: Resending CompletePingCheck packet, 4345ms have passed
+INFO: Resending CompletePingCheck packet, 4229ms have passed
+INFO: Resending CompletePingCheck packet, 4449ms have passed
+INFO: Resending CompletePingCheck packet, 4490ms have passed
+INFO: Resending CompletePingCheck packet, 4450ms have passed
+INFO: Resending CompletePingCheck packet, 4196ms have passed
+INFO: Resending CompletePingCheck packet, 4086ms have passed
+INFO: Resending CompletePingCheck packet, 4161ms have passed
+INFO: Resending CompletePingCheck packet, 4446ms have passed
+INFO: Resending RequestMultipleObjects packet, 4125ms have passed
+INFO: Resending CompletePingCheck packet, 4359ms have passed
+INFO: Resending CompletePingCheck packet, 4135ms have passed
+INFO: Resending CompletePingCheck packet, 4203ms have passed
+INFO: Resending CompletePingCheck packet, 4239ms have passed
+INFO: Resending CompletePingCheck packet, 4253ms have passed
+INFO: Resending CompletePingCheck packet, 4329ms have passed
+INFO: Resending CompletePingCheck packet, 4486ms have passed
+INFO: Resending CompletePingCheck packet, 4045ms have passed
+INFO: Resending CompletePingCheck packet, 4040ms have passed
+INFO: Resending CompletePingCheck packet, 4311ms have passed
+INFO: Resending CompletePingCheck packet, 4495ms have passed
+INFO: Resending CompletePingCheck packet, 4392ms have passed
+INFO: Resending CompletePingCheck packet, 4431ms have passed
+INFO: Resending CompletePingCheck packet, 4132ms have passed
+INFO: Resending CompletePingCheck packet, 4350ms have passed
+INFO: Resending CompletePingCheck packet, 4325ms have passed
+INFO: Resending CompletePingCheck packet, 4232ms have passed
+INFO: Resending CompletePingCheck packet, 4083ms have passed
+INFO: Resending CompletePingCheck packet, 4172ms have passed
+&lt;IM&gt;SL Exchange Magic Box blue: SL Exchange - Delivered item Drug Table.
+INFO: Resending RequestMultipleObjects packet, 4084ms have passed
+INFO: Resending CompletePingCheck packet, 4156ms have passed
+INFO: Resending CompletePingCheck packet, 4424ms have passed
+INFO: Resending CompletePingCheck packet, 4046ms have passed
+INFO: Resending CompletePingCheck packet, 4103ms have passed
+INFO: Resending CompletePingCheck packet, 4493ms have passed
+INFO: Resending CompletePingCheck packet, 4373ms have passed
+&lt;IM&gt;fyrepunx Leader: Join me in Anarchia
+Accepting teleport lure
+&lt;IM&gt;fyrepunx Leader: Join me in Anarchia
+Accepting teleport lure
+&lt;IM&gt;fyrepunx Leader: sit
+Sat on f6aaafe7ee4d52cd55b9c78accd165d5. Distance: 0.613469660282135
+INFO: Resending CompletePingCheck packet, 4464ms have passed
+&lt;IM&gt;Gabriel9990 Burks (not in group): <A HREF="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">typing at 2560738794824e6c9f461a26af5cfcd4</A>:&lt;35.8, 43.7276, 23.1012&gt;
+&lt;IM&gt;Gabriel9990 Burks (not in group): <A HREF="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">typing at 2560738794824e6c9f461a26af5cfcd4</A>:&lt;35.7697, 43.71, 23.102&gt;
+&lt;IM&gt;Gabriel9990 Burks (not in group): hey need money please!!!!!!!@2560738794824e6c9f461a26af5cfcd4:&lt;35.76974                 , 43.70997, 23.102&gt;
+
+8 avatars online&gt; uptime
+I am Spine Breaker, Up Since: 12/30/2006 16:30:58 (03:07:06.6082670)
+I am Get Backer, Up Since: 12/30/2006 16:30:44 (03:07:20.7795490)
+I am Anarchy Allstar, Up Since: 12/30/2006 16:31:00 (03:07:04.9076230)
+I am Keyboard Goldkey, Up Since: 12/30/2006 16:31:06 (03:06:59.5746490)
+I am Anarchy Independent, Up Since: 12/30/2006 16:31:04 (03:07:01.0319970)
+I am X13M Oe, Up Since: 12/30/2006 16:31:13 (03:06:52.4455360)
+I am Dope Herber, Up Since: 12/30/2006 16:30:52 (03:07:13.5685330)
+I am Anarchy Kit, Up Since: 12/30/2006 16:31:16 (03:06:49.2979390)
+I am SLLabs Backer, Up Since: 12/30/2006 16:30:50 (03:07:15.3801160)
+I am Punx Leader, Up Since: 12/30/2006 16:31:10 (03:06:55.5934090)
+I am Lustmord Demontrond, Up Since: 12/30/2006 16:30:55 (03:07:10.1468640)
+I am ThirtyEight Caliber, Up Since: 12/30/2006 16:31:08 (03:06:57.8913210)
+I am Anarchy Blackflag, Up Since: 12/30/2006 16:30:57 (03:07:08.5567450)
+I am NMAP Scanlan, Up Since: 12/30/2006 16:30:53 (03:07:12.1833770)
+8 avatars online&gt; login nmap scanlan kawaii21459
+INFO: Connecting to 64.129.40.51:13003
+Logged in NMAP Scanlan
+9 avatars online&gt; Got the group ID for NMAP Scanlan, requesting group members...
+INFO: Received a region handshake for Anarchia
+Got 52 group members.
+WARNING: Caught an exception in a packet callback: System.NullReferenceException: Object reference not set to                  an instance of an object
+  at libsecondlife.TestClient.TestClient.Self_OnInstantMessage (libsecondlife.LLUUID fromAgentID, System.Stri                 ng fromAgentName, libsecondlife.LLUUID toAgentID, UInt32 parentEstateID, libsecondlife.LLUUID regionID, LLVec                 tor3 position, Byte dialog, Boolean groupIM, libsecondlife.LLUUID imSessionID, DateTime timestamp, System.Str                 ing message, Byte offline, System.Byte[] binaryBucket) [0x00000]
+  at (wrapper delegate-invoke) System.MulticastDelegate:invoke_void_LLUUID_string_LLUUID_uint_LLUUID_LLVector                 3_byte_bool_LLUUID_DateTime_string_byte_byte[] (libsecondlife.LLUUID,string,libsecondlife.LLUUID,uint,libseco                 ndlife.LLUUID,libsecondlife.LLVector3,byte,bool,libsecondlife.LLUUID,System.DateTime,string,byte,byte[])
+  at libsecondlife.MainAvatar.InstantMessageHandler (libsecondlife.Packets.Packet packet, libsecondlife.Simul                 ator simulator) [0x00000]
+  at (wrapper delegate-invoke) System.MulticastDelegate:invoke_void_Packet_Simulator (libsecondlife.Packets.P                 acket,libsecondlife.Simulator)
+  at libsecondlife.Simulator.OnReceivedData (IAsyncResult result) [0x00000]
+WARNING: Caught an exception in a packet callback: System.NullReferenceException: Object reference not set to                  an instance of an object
+  at libsecondlife.TestClient.TestClient.Self_OnInstantMessage (libsecondlife.LLUUID fromAgentID, System.Stri                 ng fromAgentName, libsecondlife.LLUUID toAgentID, UInt32 parentEstateID, libsecondlife.LLUUID regionID, LLVec                 tor3 position, Byte dialog, Boolean groupIM, libsecondlife.LLUUID imSessionID, DateTime timestamp, System.Str                 ing message, Byte offline, System.Byte[] binaryBucket) [0x00000]
+  at (wrapper delegate-invoke) System.MulticastDelegate:invoke_void_LLUUID_string_LLUUID_uint_LLUUID_LLVector                 3_byte_bool_LLUUID_DateTime_string_byte_byte[] (libsecondlife.LLUUID,string,libsecondlife.LLUUID,uint,libseco                 ndlife.LLUUID,libsecondlife.LLVector3,byte,bool,libsecondlife.LLUUID,System.DateTime,string,byte,byte[])
+  at libsecondlife.MainAvatar.InstantMessageHandler (libsecondlife.Packets.Packet packet, libsecondlife.Simul                 ator simulator) [0x00000]
+  at (wrapper delegate-invoke) System.MulticastDelegate:invoke_void_Packet_Simulator (libsecondlife.Packets.P                 acket,libsecondlife.Simulator)
+  at libsecondlife.Simulator.OnReceivedData (IAsyncResult result) [0x00000]
+
+9 avatars online&gt; WARNING: Caught an exception in a packet callback: System.NullReferenceException: Object re                 ference not set to an instance of an object
+  at libsecondlife.TestClient.TestClient.Self_OnInstantMessage (libsecondlife.LLUUID fromAgentID, System.Stri                 ng fromAgentName, libsecondlife.LLUUID toAgentID, UInt32 parentEstateID, libsecondlife.LLUUID regionID, LLVec                 tor3 position, Byte dialog, Boolean groupIM, libsecondlife.LLUUID imSessionID, DateTime timestamp, System.Str                 ing message, Byte offline, System.Byte[] binaryBucket) [0x00000]
+  at (wrapper delegate-invoke) System.MulticastDelegate:invoke_void_LLUUID_string_LLUUID_uint_LLUUID_LLVector                 3_byte_bool_LLUUID_DateTime_string_byte_byte[] (libsecondlife.LLUUID,string,libsecondlife.LLUUID,uint,libseco                 ndlife.LLUUID,libsecondlife.LLVector3,byte,bool,libsecondlife.LLUUID,System.DateTime,string,byte,byte[])
+  at libsecondlife.MainAvatar.InstantMessageHandler (libsecondlife.Packets.Packet packet, libsecondlife.Simul                 ator simulator) [0x00000]
+  at (wrapper delegate-invoke) System.MulticastDelegate:invoke_void_Packet_Simulator (libsecondlife.Packets.P                 acket,libsecondlife.Simulator)
+  at libsecondlife.Simulator.OnReceivedData (IAsyncResult result) [0x00000]
+INFO: Resending CompletePingCheck packet, 4360ms have passed
+INFO: Resending CompletePingCheck packet, 4345ms have passed
+&lt;IM&gt;Inyur Orbit (not in group): only 90 tickets left..|Come on out, only 90 tickets left..for the 10,000$L dr                 awing.
+Plus your chance to vote for one of the best casino's in SL.
+
+Quote from a professional casino player &quot;THIS PLACE KICKS *SS&quot;.
+
+at 9 PM goning to have a Give and take game, only 10 seat's available. Chance to win over 380 L$ per round. I                 f no one wins the round, the pot rolls over till someone wins. Which could be 1000's. 50$L per player. Per ro                 und.
+
+Want to say Happy New <A HREF="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">Years. at aa6765cd389d4b87a637daa037690159</A>:&lt;163.673, 110.944, 25.4301&gt;
+INFO: Resending CompletePingCheck packet, 4461ms have passed
+INFO: Resending CompletePingCheck packet, 4160ms have passed
+&lt;IM&gt;fyrepunx Leader: sit
+Sat on 0b6423052a2cf91dc83f747af091b7c6. Distance: 0.170405820012093
+&lt;IM&gt;fyrepunx Leader: Join me in Anarchia
+Accepting teleport lure
+
+9 avatars online&gt; INFO: Resending CompletePingCheck packet, 4246ms have passed
+tor) [0x00000]
+  at (wrapper delegate-invoke) System.MulticastDelegate:invoke_void_Packet_Simulator (libsecondlife.Packets.Packet,libse      condlife.Simulator)
+  at libsecondlife.Simulator.OnReceivedData (IAsyncResult result) [0x00000]
+INFO: Resending CompletePingCheck packet, 4360ms have passed
+INFO: Resending CompletePingCheck packet, 4345ms have passed
+&lt;IM&gt;Inyur Orbit (not in group): only 90 tickets left..|Come on out, only 90 tickets left..for the 10,000$L drawing.
+Plus your chance to vote for one of the best casino's in SL.
+
+Quote from a professional casino player &quot;THIS PLACE KICKS *SS&quot;.
+
+at 9 PM goning to have a Give and take game, only 10 seat's available. Chance to win over 380 L$ per round. If no one wi      ns the round, the pot rolls over till someone wins. Which could be 1000's. 50$L per player. Per round.
+
+Want to say Happy New <A HREF="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">Years. at aa6765cd389d4b87a637daa037690159</A>:&lt;163.673, 110.944, 25.4301&gt;
+INFO: Resending CompletePingCheck packet, 4461ms have passed
+INFO: Resending CompletePingCheck packet, 4160ms have passed
+&lt;IM&gt;fyrepunx Leader: sit
+Sat on 0b6423052a2cf91dc83f747af091b7c6. Distance: 0.170405820012093
+&lt;IM&gt;fyrepunx Leader: Join me in Anarchia
+Accepting teleport lure
+
+9 avatars online&gt; INFO: Resending CompletePingCheck packet, 4246ms have passed
+  at (wrapper delegate-invoke) System.MulticastDelegate:invoke_void_LLUUID_string_LLUUID_uint_LLUUID_LLVector3_byte_bool_LLUUID_DateTime_string_byte_byte[] (libsecondlife.LLUUID,string,libsecondlife.LLUUID,uint,libsecondlife.LLUUID,libsecondlife.LLVector3,byte,bool,libsecondlife.LLUUID,System.DateTime,string,byte,byte[])
+  at libsecondlife.MainAvatar.InstantMessageHandler (libsecondlife.Packets.Packet packet, libsecondlife.Simulator simulator) [0x00000]
+  at (wrapper delegate-invoke) System.MulticastDelegate:invoke_void_Packet_Simulator (libsecondlife.Packets.Packet,libsecondlife.Simulator)
+  at libsecondlife.Simulator.OnReceivedData (IAsyncResult result) [0x00000]
+
+9 avatars online&gt; WARNING: Caught an exception in a packet callback: System.NullReferenceException: Object reference not set to an instance of an object
+  at libsecondlife.TestClient.TestClient.Self_OnInstantMessage (libsecondlife.LLUUID fromAgentID, System.String fromAgentName, libsecondlife.LLUUID toAgentID, UInt32 parentEstateID, libsecondlife.LLUUID regionID, LLVector3 position, Byte dialog, Boolean groupIM, libsecondlife.LLUUID imSessionID, DateTime timestamp, System.String message, Byte offline, System.Byte[] binaryBucket) [0x00000]
+  at (wrapper delegate-invoke) System.MulticastDelegate:invoke_void_LLUUID_string_LLUUID_uint_LLUUID_LLVector3_byte_bool_LLUUID_DateTime_string_byte_byte[] (libsecondlife.LLUUID,string,libsecondlife.LLUUID,uint,libsecondlife.LLUUID,libsecondlife.LLVector3,byte,bool,libsecondlife.LLUUID,System.DateTime,string,byte,byte[])
+  at libsecondlife.MainAvatar.InstantMessageHandler (libsecondlife.Packets.Packet packet, libsecondlife.Simulator simulator) [0x00000]
+  at (wrapper delegate-invoke) System.MulticastDelegate:invoke_void_Packet_Simulator (libsecondlife.Packets.Packet,libsecondlife.Simulator)
+  at libsecondlife.Simulator.OnReceivedData (IAsyncResult result) [0x00000]
+INFO: Resending CompletePingCheck packet, 4360ms have passed
+INFO: Resending CompletePingCheck packet, 4345ms have passed
+&lt;IM&gt;Inyur Orbit (not in group): only 90 tickets left..|Come on out, only 90 tickets left..for the 10,000$L drawing.
+Plus your chance to vote for one of the best casino's in SL.
+
+Quote from a professional casino player &quot;THIS PLACE KICKS *SS&quot;.
+
+at 9 PM goning to have a Give and take game, only 10 seat's available. Chance to win over 380 L$ per round. If no one wins the round, the pot rolls over till someone wins. Which could be 1000's. 50$L per player. Per round.
+
+Want to say Happy New <A HREF="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">Years. at aa6765cd389d4b87a637daa037690159</A>:&lt;163.673, 110.944, 25.4301&gt;
+INFO: Resending CompletePingCheck packet, 4461ms have passed
+INFO: Resending CompletePingCheck packet, 4160ms have passed
+&lt;IM&gt;fyrepunx Leader: sit
+Sat on 0b6423052a2cf91dc83f747af091b7c6. Distance: 0.170405820012093
+&lt;IM&gt;fyrepunx Leader: Join me in Anarchia
+Accepting teleport lure
+
+9 avatars online&gt; INFO: Resending CompletePingCheck packet, 4246ms have passed
+
+
+Follow-Ups:
+
+Date: 2007-Jan-05 03:10
+By: jhurliman
+
+Comment:
+I believe the NullReferenceException in the IM callback was checking against the Master LLUUID when it was not set (null). This has been fixed and I'll assume the bug closed.
+-------------------------------------------------------
+
+For detailed info, follow this link:
+<A HREF="http://developer.berlios.de/bugs/?func=detailbug&amp;bug_id=9849&amp;group_id=7710">http://developer.berlios.de/bugs/?func=detailbug&amp;bug_id=9849&amp;group_id=7710</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000111.html">[Libsecondlife-dev] [Bug #9724] TestClient SetAppearanceCommand	replicates code
+</A></li>
+	<LI>Next message: <A HREF="000113.html">[Libsecondlife-dev] [Bug #9872] RSS feed for the libsecondlife.org	phpBB forum
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#112">[ date ]</a>
+              <a href="thread.html#112">[ thread ]</a>
+              <a href="subject.html#112">[ subject ]</a>
+              <a href="author.html#112">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">More information about the Libsecondlife-dev
+mailing list</a><br>
+</body></html>

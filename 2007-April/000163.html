@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Libsecondlife-dev] I'll be back, soon. (Alpha Zaius)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/libsecondlife-dev/2007-April/index.html" >
+   <LINK REL="made" HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20I%27ll%20be%20back%2C%20soon.%20%28Alpha%20Zaius%29&In-Reply-To=%3C46124BEC.7040500%40vertexdev.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000162.html">
+   <LINK REL="Next"  HREF="000164.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Libsecondlife-dev] I'll be back, soon. (Alpha Zaius)</H1>
+    <B>Jeff Barr</B> 
+    <A HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20I%27ll%20be%20back%2C%20soon.%20%28Alpha%20Zaius%29&In-Reply-To=%3C46124BEC.7040500%40vertexdev.com%3E"
+       TITLE="[Libsecondlife-dev] I'll be back, soon. (Alpha Zaius)">jeff at vertexdev.com
+       </A><BR>
+    <I>Tue Apr  3 14:43:24 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000162.html">[Libsecondlife-dev] I'll be back, soon.
+</A></li>
+        <LI>Next message: <A HREF="000164.html">[Libsecondlife-dev] I'll be back, soon. (Alpha Zaius)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#163">[ date ]</a>
+              <a href="thread.html#163">[ thread ]</a>
+              <a href="subject.html#163">[ subject ]</a>
+              <a href="author.html#163">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>From: &quot;Alpha Zaius&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">alpha.zaius at gmail.com</A>&gt;:
+&gt;<i> The server is scalable. In fact, it will be comprised of Amazon Web Services
+</I>&gt;<i> such as S3 and EC2. There will be an array of EC2's handling all the
+</I>&gt;<i> requests. There will be one EC2 (or regular linux server) that will act as a
+</I>&gt;<i> DNS and manages the array. It will be efficient in terms that it will track
+</I>&gt;<i> the demand of the service and open or close EC2 servers appropiately. This
+</I>&gt;<i> way, it will minimize cost while maximizing stability. Example: Lets say its
+</I>&gt;<i> a sunday evening and SL just hit peak concurrency. At the same time, 1000
+</I>&gt;<i> people are running the client with SL. With these clients, over 50 requests
+</I>&gt;<i> per second are coming in to the DNS. The array only holds one EC2, and that
+</I>&gt;<i> server has a server load of 90% and it is increasing. The master server
+</I>&gt;<i> (DNS) will then open up a new EC2 and add it to the array and then
+</I>&gt;<i> distribute requests to the new one through RR DNS. Night is coming along,
+</I>&gt;<i> and both servers have around .4 CPU load and a total of about 40 requests
+</I>&gt;<i> per second. The primary server will then change the DNS to point to only one
+</I>&gt;<i> of those servers and then shut down the other one when the DNS proprogates.
+</I>&gt;<i>
+</I>&gt;<i> Another thing about the server array.. since it is using AWS, we can use S3
+</I>&gt;<i> to store all the assets privately. The reason why we need EC2s to handle the
+</I>&gt;<i> assets is to avoid anyone reverse engineering the proxy code and downloading
+</I>&gt;<i> a lot of assets and reuploading them to SL, sparking another OMG COPYCACHE
+</I>&gt;<i> thingy. The EC2 servers encrypt the assets with a unique salt and compresses
+</I>&gt;<i> them down to save us bandwidth and increase delivary speed. I know, it may
+</I>&gt;<i> be silly.. but tell me what you all think
+</I>&gt;<i> *****************************************
+</I>&gt;<i>   
+</I>
+Wow, that's cool. When I started reading this I was thinking that 
+storing the objects in S3 would
+be the way to go. Of course you were way ahead of me. I'm looking 
+forward to hearing a lot
+more about this.
+
+Jeff;
+
+-- 
+* Jeff Barr (RL) / Jeffronius Batra (SL)
+* RSS Feeds:           <A HREF="http://www.syndic8.com">http://www.syndic8.com</A>                    
+* Blog:                <A HREF="http://www.jeff-barr.com">http://www.jeff-barr.com</A>
+* Amazon Web Services: <A HREF="http://aws.typepad.com">http://aws.typepad.com</A>
+* Resume:              <A HREF="http://www.syndic8.com/~jeff/resume.html">http://www.syndic8.com/~jeff/resume.html</A>
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000162.html">[Libsecondlife-dev] I'll be back, soon.
+</A></li>
+	<LI>Next message: <A HREF="000164.html">[Libsecondlife-dev] I'll be back, soon. (Alpha Zaius)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#163">[ date ]</a>
+              <a href="thread.html#163">[ thread ]</a>
+              <a href="subject.html#163">[ subject ]</a>
+              <a href="author.html#163">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">More information about the Libsecondlife-dev
+mailing list</a><br>
+</body></html>

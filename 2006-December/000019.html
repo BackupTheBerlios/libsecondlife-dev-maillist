@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Libsecondlife-dev] [Bug #9646] Prim XML (De)serialization is Broken
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/libsecondlife-dev/2006-December/index.html" >
+   <LINK REL="made" HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20%5BBug%20%239646%5D%20Prim%20XML%20%28De%29serialization%20is%20Broken&In-Reply-To=%3C200612081642.kB8GgbF8017403%40unicorn.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000018.html">
+   <LINK REL="Next"  HREF="000020.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Libsecondlife-dev] [Bug #9646] Prim XML (De)serialization is Broken</H1>
+    <B>admin at berlios.de</B> 
+    <A HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20%5BBug%20%239646%5D%20Prim%20XML%20%28De%29serialization%20is%20Broken&In-Reply-To=%3C200612081642.kB8GgbF8017403%40unicorn.berlios.de%3E"
+       TITLE="[Libsecondlife-dev] [Bug #9646] Prim XML (De)serialization is Broken">admin at berlios.de
+       </A><BR>
+    <I>Fri Dec  8 17:42:37 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000018.html">[Libsecondlife-dev] [Bug #9646] Prim XML (De)serialization is Broken
+</A></li>
+        <LI>Next message: <A HREF="000020.html">[Libsecondlife-dev] [Bug #9663] Resent packet flood and multiple	callbacks after a few hours
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19">[ date ]</a>
+              <a href="thread.html#19">[ thread ]</a>
+              <a href="subject.html#19">[ subject ]</a>
+              <a href="author.html#19">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Bug #9646, was updated on 2006-Dec-06 17:22
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: None
+Status: Closed
+Resolution: Fixed
+Bug Group: None
+Priority: 5
+Submitted by: jhurliman
+Assigned to : none
+Summary: Prim XML (De)serialization is Broken
+
+Details: We have not yet been successful is deserializing a list of prims from XML. The serialization appears to work correctly and multiple prims are output in to a list along with all of their parameters, but when deserializing back in to a List&lt;PrimObject&gt; structure lots of error callbacks occur, failing on nearly everything that is not an attribute.
+
+Maybe we have to generate an XSD (using xsd.exe included with the .NET 2.0 SDK) and use that for deserialization? More investigation is needed here.
+
+Follow-Ups:
+
+Date: 2006-Dec-08 08:42
+By: jhurliman
+
+Comment:
+Confirmed as working in the latest svn.
+-------------------------------------------------------
+
+Date: 2006-Dec-08 01:04
+By: lonecoder
+
+Comment:
+Fixed in rev 694.
+
+The problem was with LLUUID.ReadXml not moving the reader position up, so anything read after a uuid would be corrupt.
+-------------------------------------------------------
+
+For detailed info, follow this link:
+<A HREF="http://developer.berlios.de/bugs/?func=detailbug&amp;bug_id=9646&amp;group_id=7710">http://developer.berlios.de/bugs/?func=detailbug&amp;bug_id=9646&amp;group_id=7710</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000018.html">[Libsecondlife-dev] [Bug #9646] Prim XML (De)serialization is Broken
+</A></li>
+	<LI>Next message: <A HREF="000020.html">[Libsecondlife-dev] [Bug #9663] Resent packet flood and multiple	callbacks after a few hours
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19">[ date ]</a>
+              <a href="thread.html#19">[ thread ]</a>
+              <a href="subject.html#19">[ subject ]</a>
+              <a href="author.html#19">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">More information about the Libsecondlife-dev
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,200 @@
+From alpha.zaius at gmail.com  Mon Apr  2 15:21:18 2007
+From: alpha.zaius at gmail.com (Alpha Zaius)
+Date: Mon, 2 Apr 2007 09:21:18 -0400
+Subject: [Libsecondlife-dev] I'll be back, soon.
+Message-ID: <c81855a10704020621j602bf363r1f73a19d68b48e00@mail.gmail.com>
+
+As most of you know, I haven't been active with libsl recently. There are
+many reasons for that, the majority of them doing with priorities and school
+work.
+
+But do not fear! I will be back very soon, and I have lots of ideas. Heck,
+I'll share one with all of you (if you make it before I even start, can I
+have a lil' credit? :P *ortmanfamily at gmail.com is my paypal*)
+
+The global cache program will be a client and server side service. The
+client will be written in libsl and utilizing slproxy. The client captures
+all packets regarding images, sound, and animation transfers. The proxy will
+not impede on any transfers, but instead will capture requests and take the
+UUID out of them and then let the request go to LL. It will then contact the
+server and ask if the server has that UUID in its storage. If it does, it
+will download that asset from the server and then inject the data packets
+very quickly. If the asset is not on the server, the client will flag the
+UUID and will download that UUID from LL as it comes through the pipe. When
+it is done downloading, it will compress it down and send it off to the
+server in the background.
+
+The server is scalable. In fact, it will be comprised of Amazon Web Services
+such as S3 and EC2. There will be an array of EC2's handling all the
+requests. There will be one EC2 (or regular linux server) that will act as a
+DNS and manages the array. It will be efficient in terms that it will track
+the demand of the service and open or close EC2 servers appropiately. This
+way, it will minimize cost while maximizing stability. Example: Lets say its
+a sunday evening and SL just hit peak concurrency. At the same time, 1000
+people are running the client with SL. With these clients, over 50 requests
+per second are coming in to the DNS. The array only holds one EC2, and that
+server has a server load of 90% and it is increasing. The master server
+(DNS) will then open up a new EC2 and add it to the array and then
+distribute requests to the new one through RR DNS. Night is coming along,
+and both servers have around .4 CPU load and a total of about 40 requests
+per second. The primary server will then change the DNS to point to only one
+of those servers and then shut down the other one when the DNS proprogates.
+
+Another thing about the server array.. since it is using AWS, we can use S3
+to store all the assets privately. The reason why we need EC2s to handle the
+assets is to avoid anyone reverse engineering the proxy code and downloading
+a lot of assets and reuploading them to SL, sparking another OMG COPYCACHE
+thingy. The EC2 servers encrypt the assets with a unique salt and compresses
+them down to save us bandwidth and increase delivary speed. I know, it may
+be silly.. but tell me what you all think
+
+I'll be back in a month or so (or maybe earlier!)
+Sorry for the bad grammar, had to rush through it.
+
+Alpha / Qode
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/libsecondlife-dev/attachments/20070402/b9ec4538/attachment.html>
+
+From jeff at vertexdev.com  Tue Apr  3 14:43:24 2007
+From: jeff at vertexdev.com (Jeff Barr)
+Date: Tue, 03 Apr 2007 05:43:24 -0700
+Subject: [Libsecondlife-dev] I'll be back, soon. (Alpha Zaius)
+In-Reply-To: <mailman.41.1175594433.11869.libsecondlife-dev@lists.berlios.de>
+References: <mailman.41.1175594433.11869.libsecondlife-dev@lists.berlios.de>
+Message-ID: <46124BEC.7040500@vertexdev.com>
+
+From: "Alpha Zaius" <alpha.zaius at gmail.com>:
+> The server is scalable. In fact, it will be comprised of Amazon Web Services
+> such as S3 and EC2. There will be an array of EC2's handling all the
+> requests. There will be one EC2 (or regular linux server) that will act as a
+> DNS and manages the array. It will be efficient in terms that it will track
+> the demand of the service and open or close EC2 servers appropiately. This
+> way, it will minimize cost while maximizing stability. Example: Lets say its
+> a sunday evening and SL just hit peak concurrency. At the same time, 1000
+> people are running the client with SL. With these clients, over 50 requests
+> per second are coming in to the DNS. The array only holds one EC2, and that
+> server has a server load of 90% and it is increasing. The master server
+> (DNS) will then open up a new EC2 and add it to the array and then
+> distribute requests to the new one through RR DNS. Night is coming along,
+> and both servers have around .4 CPU load and a total of about 40 requests
+> per second. The primary server will then change the DNS to point to only one
+> of those servers and then shut down the other one when the DNS proprogates.
+>
+> Another thing about the server array.. since it is using AWS, we can use S3
+> to store all the assets privately. The reason why we need EC2s to handle the
+> assets is to avoid anyone reverse engineering the proxy code and downloading
+> a lot of assets and reuploading them to SL, sparking another OMG COPYCACHE
+> thingy. The EC2 servers encrypt the assets with a unique salt and compresses
+> them down to save us bandwidth and increase delivary speed. I know, it may
+> be silly.. but tell me what you all think
+> *****************************************
+>   
+
+Wow, that's cool. When I started reading this I was thinking that 
+storing the objects in S3 would
+be the way to go. Of course you were way ahead of me. I'm looking 
+forward to hearing a lot
+more about this.
+
+Jeff;
+
+-- 
+* Jeff Barr (RL) / Jeffronius Batra (SL)
+* RSS Feeds:           http://www.syndic8.com                    
+* Blog:                http://www.jeff-barr.com
+* Amazon Web Services: http://aws.typepad.com
+* Resume:              http://www.syndic8.com/~jeff/resume.html
+
+
+
+
+From mindtriggerz at gmail.com  Tue Apr  3 16:09:03 2007
+From: mindtriggerz at gmail.com (Jesse Nesbitt)
+Date: Tue, 3 Apr 2007 10:09:03 -0400
+Subject: [Libsecondlife-dev] I'll be back, soon. (Alpha Zaius)
+In-Reply-To: <46124BEC.7040500@vertexdev.com>
+References: <mailman.41.1175594433.11869.libsecondlife-dev@lists.berlios.de>
+	<46124BEC.7040500@vertexdev.com>
+Message-ID: <eddb9050704030709g69cfbadw63028c74dc39616@mail.gmail.com>
+
+That is pretty neat. I just got my EC2 account (stalled signing up for S3
+for a few months), so I'd be glad to help.
+
+On 4/3/07, Jeff Barr <jeff at vertexdev.com> wrote:
+>
+> From: "Alpha Zaius" <alpha.zaius at gmail.com>:
+> > The server is scalable. In fact, it will be comprised of Amazon Web
+> Services
+> > such as S3 and EC2. There will be an array of EC2's handling all the
+> > requests. There will be one EC2 (or regular linux server) that will act
+> as a
+> > DNS and manages the array. It will be efficient in terms that it will
+> track
+> > the demand of the service and open or close EC2 servers appropiately.
+> This
+> > way, it will minimize cost while maximizing stability. Example: Lets say
+> its
+> > a sunday evening and SL just hit peak concurrency. At the same time,
+> 1000
+> > people are running the client with SL. With these clients, over 50
+> requests
+> > per second are coming in to the DNS. The array only holds one EC2, and
+> that
+> > server has a server load of 90% and it is increasing. The master server
+> > (DNS) will then open up a new EC2 and add it to the array and then
+> > distribute requests to the new one through RR DNS. Night is coming
+> along,
+> > and both servers have around .4 CPU load and a total of about 40
+> requests
+> > per second. The primary server will then change the DNS to point to only
+> one
+> > of those servers and then shut down the other one when the DNS
+> proprogates.
+> >
+> > Another thing about the server array.. since it is using AWS, we can use
+> S3
+> > to store all the assets privately. The reason why we need EC2s to handle
+> the
+> > assets is to avoid anyone reverse engineering the proxy code and
+> downloading
+> > a lot of assets and reuploading them to SL, sparking another OMG
+> COPYCACHE
+> > thingy. The EC2 servers encrypt the assets with a unique salt and
+> compresses
+> > them down to save us bandwidth and increase delivary speed. I know, it
+> may
+> > be silly.. but tell me what you all think
+> > *****************************************
+> >
+>
+> Wow, that's cool. When I started reading this I was thinking that
+> storing the objects in S3 would
+> be the way to go. Of course you were way ahead of me. I'm looking
+> forward to hearing a lot
+> more about this.
+>
+> Jeff;
+>
+> --
+> * Jeff Barr (RL) / Jeffronius Batra (SL)
+> * RSS Feeds:           http://www.syndic8.com
+> * Blog:                http://www.jeff-barr.com
+> * Amazon Web Services: http://aws.typepad.com
+> * Resume:              http://www.syndic8.com/~jeff/resume.html
+>
+>
+> _______________________________________________
+> Libsecondlife-dev mailing list
+> Libsecondlife-dev at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/libsecondlife-dev
+>
+
+
+
+-- 
+--Jesse
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/libsecondlife-dev/attachments/20070403/e3ba6673/attachment.html>
+

@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Libsecondlife-dev] Patch to fix unnecessary rebuilding
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/libsecondlife-dev/2006-December/index.html" >
+   <LINK REL="made" HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20Patch%20to%20fix%20unnecessary%20rebuilding&In-Reply-To=%3C6b7739620612070122t42d1b805i73bfb788b0a545bb%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000015.html">
+   <LINK REL="Next"  HREF="000017.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Libsecondlife-dev] Patch to fix unnecessary rebuilding</H1>
+    <B>Ben Anhalt</B> 
+    <A HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20Patch%20to%20fix%20unnecessary%20rebuilding&In-Reply-To=%3C6b7739620612070122t42d1b805i73bfb788b0a545bb%40mail.gmail.com%3E"
+       TITLE="[Libsecondlife-dev] Patch to fix unnecessary rebuilding">ben.anhalt at gmail.com
+       </A><BR>
+    <I>Thu Dec  7 10:22:57 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000015.html">[Libsecondlife-dev] [Bug #9646] Prim XML (De)serialization is Broken
+</A></li>
+        <LI>Next message: <A HREF="000017.html">[Libsecondlife-dev] Patch to fix unnecessary rebuilding
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#16">[ date ]</a>
+              <a href="thread.html#16">[ thread ]</a>
+              <a href="subject.html#16">[ subject ]</a>
+              <a href="author.html#16">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+I attached a diff of some changes I made to
+<A HREF="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">libsecondlife-dev at lists.berlios.de</A> that allows nant to avoid
+rebuilding everything everytime it is invoked.
+
+
+-- 
+Ben Anhalt
+<A HREF="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">ben.anhalt at gmail.com</A>
+-------------- next part --------------
+Index: libsecondlife-cs/libsecondlife.build
+===================================================================
+--- libsecondlife-cs/libsecondlife.build	(revision 691)
++++ libsecondlife-cs/libsecondlife.build	(working copy)
+@@ -55,7 +55,18 @@
+                 &lt;include name=&quot;mapgenerator/ProtocolManager.cs&quot; /&gt;
+             &lt;/sources&gt;
+         &lt;/csc&gt;
+-        &lt;exec program=&quot;../bin/mapgenerator.exe&quot; output=&quot;_Packets_.cs&quot; useruntimeengine=&quot;true&quot;&gt;
++	&lt;!-- Does _Packets_.cs really need to be reproduced? --&gt;
++	&lt;!-- Don't do it unless we have must, otherwise lots of stuff recompiles. --&gt;
++	&lt;uptodate property=&quot;_Packets_.cs.uptodate&quot;&gt;
++	    &lt;sourcefiles&gt;
++	        &lt;include name=&quot;../bin/mapgenerator.exe&quot; /&gt;
++		&lt;include name=&quot;../data/message_template.msg mapgenerator/template.cs&quot; /&gt;
++	    &lt;/sourcefiles&gt;
++	    &lt;targetfiles&gt;
++	        &lt;include name=&quot;_Packets_.cs&quot; /&gt;
++	    &lt;/targetfiles&gt;
++	&lt;/uptodate&gt;
++        &lt;exec program=&quot;../bin/mapgenerator.exe&quot; output=&quot;_Packets_.cs&quot; useruntimeengine=&quot;true&quot; unless=&quot;${_Packets_.cs.uptodate}&quot;&gt;
+             &lt;arg line=&quot;../data/message_template.msg mapgenerator/template.cs _Packets_.cs&quot; /&gt;
+         &lt;/exec&gt;
+     &lt;/target&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000015.html">[Libsecondlife-dev] [Bug #9646] Prim XML (De)serialization is Broken
+</A></li>
+	<LI>Next message: <A HREF="000017.html">[Libsecondlife-dev] Patch to fix unnecessary rebuilding
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#16">[ date ]</a>
+              <a href="thread.html#16">[ thread ]</a>
+              <a href="subject.html#16">[ subject ]</a>
+              <a href="author.html#16">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">More information about the Libsecondlife-dev
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Libsecondlife-dev] Boot Sequence State Machine(s)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/libsecondlife-dev/2006-December/index.html" >
+   <LINK REL="made" HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20Boot%20Sequence%20State%20Machine%28s%29&In-Reply-To=%3C4592E6CD.5070006%40wsu.edu%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000093.html">
+   <LINK REL="Next"  HREF="000095.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Libsecondlife-dev] Boot Sequence State Machine(s)</H1>
+    <B>John Hurliman</B> 
+    <A HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20Boot%20Sequence%20State%20Machine%28s%29&In-Reply-To=%3C4592E6CD.5070006%40wsu.edu%3E"
+       TITLE="[Libsecondlife-dev] Boot Sequence State Machine(s)">jhurliman at wsu.edu
+       </A><BR>
+    <I>Wed Dec 27 22:34:05 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000093.html">[Libsecondlife-dev] Boot Sequence State Machine(s)
+</A></li>
+        <LI>Next message: <A HREF="000095.html">[Libsecondlife-dev] Boot Sequence State Machine(s)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#94">[ date ]</a>
+              <a href="thread.html#94">[ thread ]</a>
+              <a href="subject.html#94">[ subject ]</a>
+              <a href="author.html#94">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE><A HREF="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">sbg at acw.com</A> wrote:
+&gt;<i> I was unclear.  I was thinking of the transition between the initial cache
+</I>&gt;<i> update &amp; priming phase and steady state message shuffling.  I've noticed
+</I>&gt;<i> that the server seems to idle by sending the client StartPingChecks to let
+</I>&gt;<i> the client digest what it has been sent and ask for anything additional it
+</I>&gt;<i> thinks it could use.  The transition seems to be when 1) the client's
+</I>&gt;<i> CompletePingCheck is up-to-date, 2) the client isn't making any more
+</I>&gt;<i> requests and 3) the server has no additional precache information to send.
+</I>&gt;<i>  Now we're at a quiescent steady state and the games can begin.
+</I>&gt;<i>   
+</I>
+What is your definition of idle? At that point the server would be 
+sending the client LayerData packets to describe the terrain/wind/clouds 
+and ObjectUpdate + other object packets to describe the surrounding 
+world, along with handling any requests from the client for more data. I 
+guess I'm not following what you are trying to find?
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000093.html">[Libsecondlife-dev] Boot Sequence State Machine(s)
+</A></li>
+	<LI>Next message: <A HREF="000095.html">[Libsecondlife-dev] Boot Sequence State Machine(s)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#94">[ date ]</a>
+              <a href="thread.html#94">[ thread ]</a>
+              <a href="subject.html#94">[ subject ]</a>
+              <a href="author.html#94">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">More information about the Libsecondlife-dev
+mailing list</a><br>
+</body></html>

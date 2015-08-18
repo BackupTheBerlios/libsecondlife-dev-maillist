@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Libsecondlife-dev] SL Proxy Mega Cache?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/libsecondlife-dev/2006-December/index.html" >
+   <LINK REL="made" HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20SL%20Proxy%20Mega%20Cache%3F&In-Reply-To=%3C458A400B.1030008%40laserfur.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000072.html">
+   <LINK REL="Next"  HREF="000064.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Libsecondlife-dev] SL Proxy Mega Cache?</H1>
+    <B>Bill, grumble</B> 
+    <A HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20SL%20Proxy%20Mega%20Cache%3F&In-Reply-To=%3C458A400B.1030008%40laserfur.com%3E"
+       TITLE="[Libsecondlife-dev] SL Proxy Mega Cache?">grumble at laserfur.com
+       </A><BR>
+    <I>Thu Dec 21 09:04:27 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000072.html">[Libsecondlife-dev] Cory: Townhall followup
+</A></li>
+        <LI>Next message: <A HREF="000064.html">[Libsecondlife-dev] SL Proxy Mega Cache?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#63">[ date ]</a>
+              <a href="thread.html#63">[ thread ]</a>
+              <a href="subject.html#63">[ subject ]</a>
+              <a href="author.html#63">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>How hard would it be to make a proxy server that
+caches 100's of Gigs of textures for multiple clients?
+
+Caching objects would also be nice. I see that there
+is a checksum packet that could be used for this. :)
+
+  I would rather see Grey ghosts for 30 seconds when
+I enter a sim than nothing. If the cache did cache
+objects it could send the objects to the client with
+the grey texture UUID until it verifys that that
+object still exists.
+
+  LL may improve the client cache, but they are unlikely
+to make a separate cache server (any time soon) that can
+store 100's of gigs of storage space and can be used
+by multiple clients at the same time.
+
+--
+I am also worried about texture theft, so I am thinking
+that using simple encryption to encrypt the cache
+and not releasing that part of the code. This would help
+reduce issues like the AppThatMustNotBeNamed.
+
+I know that releasing the encrypt/decrypt module in binary
+form would not prevent all copying, but I think that LL will
+inevitably encrypt everything.
+
+--
+I prefer multiple directory system and a &quot;manually ran&quot;
+program that trims old data and sorts the objects in each file
+You would then de-fragment the hard drive since this method will
+fragment files as it goes.
+
+The master &quot;UUID,resolution&quot; to &quot;dir,file,offset&quot; table could
+get quite large, but keeping textures that are loaded at about
+the same time in the same file would speed things up.
+
+&quot;Sort as you go&quot; would work, but would be more tricky.
+-- 
+Bill, Grumble
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000072.html">[Libsecondlife-dev] Cory: Townhall followup
+</A></li>
+	<LI>Next message: <A HREF="000064.html">[Libsecondlife-dev] SL Proxy Mega Cache?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#63">[ date ]</a>
+              <a href="thread.html#63">[ thread ]</a>
+              <a href="subject.html#63">[ subject ]</a>
+              <a href="author.html#63">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">More information about the Libsecondlife-dev
+mailing list</a><br>
+</body></html>

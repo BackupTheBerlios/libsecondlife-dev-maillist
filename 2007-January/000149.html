@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Libsecondlife-dev] [Bug #10049] Teleport
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/libsecondlife-dev/2007-January/index.html" >
+   <LINK REL="made" HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20%5BBug%20%2310049%5D%20Teleport&In-Reply-To=%3C200701192145.l0JLjt6h029915%40unicorn.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000148.html">
+   <LINK REL="Next"  HREF="000150.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Libsecondlife-dev] [Bug #10049] Teleport</H1>
+    <B>admin at berlios.de</B> 
+    <A HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20%5BBug%20%2310049%5D%20Teleport&In-Reply-To=%3C200701192145.l0JLjt6h029915%40unicorn.berlios.de%3E"
+       TITLE="[Libsecondlife-dev] [Bug #10049] Teleport">admin at berlios.de
+       </A><BR>
+    <I>Fri Jan 19 22:45:55 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000148.html">[Libsecondlife-dev] [Bug #9887] CAPS issue
+</A></li>
+        <LI>Next message: <A HREF="000150.html">[Libsecondlife-dev] AppearanceManager, NullReferenceException
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#149">[ date ]</a>
+              <a href="thread.html#149">[ thread ]</a>
+              <a href="subject.html#149">[ subject ]</a>
+              <a href="author.html#149">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Bug #10049, was updated on 2007-Jan-18 16:27
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: agni
+Status: Closed
+Resolution: None
+Bug Group: Buggy Code
+Priority: 8
+Submitted by: mvoogd
+Assigned to : otakup0pe
+Summary: Teleport
+
+Details: The Teleport is broken since the SL patch at 1/17/2007.
+The error message is: Couldn't find the region (name)
+This used to work before the patch.
+
+Follow-Ups:
+
+Date: 2007-Jan-19 17:45
+By: otakup0pe
+
+Comment:
+Fixed in r862
+-------------------------------------------------------
+
+Date: 2007-Jan-19 09:32
+By: jhurliman
+
+Comment:
+I fixed the MapLayerRequest failing, it was an outdated message template. Everything is updated to the latest protocol but it looks like we're still having some issues with the Caps support so teleports don't complete and may leave avatars in limbo right now. I upgraded this to a high priority issue and hopefully it will be resolved soon.
+-------------------------------------------------------
+
+Date: 2007-Jan-19 06:55
+By: otakup0pe
+
+Comment:
+This is due to changes in the SL protocol, specifically the addition of CAPS. We had teleports working the preview grid, but it looks like some changes went live that did not see the public preview grid. As of now it is still broken.
+-------------------------------------------------------
+
+For detailed info, follow this link:
+<A HREF="http://developer.berlios.de/bugs/?func=detailbug&amp;bug_id=10049&amp;group_id=7710">http://developer.berlios.de/bugs/?func=detailbug&amp;bug_id=10049&amp;group_id=7710</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000148.html">[Libsecondlife-dev] [Bug #9887] CAPS issue
+</A></li>
+	<LI>Next message: <A HREF="000150.html">[Libsecondlife-dev] AppearanceManager, NullReferenceException
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#149">[ date ]</a>
+              <a href="thread.html#149">[ thread ]</a>
+              <a href="subject.html#149">[ subject ]</a>
+              <a href="author.html#149">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">More information about the Libsecondlife-dev
+mailing list</a><br>
+</body></html>

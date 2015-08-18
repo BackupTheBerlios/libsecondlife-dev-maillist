@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Libsecondlife-dev] IndexOutOfRangeException in ZeroDecode	Helpers.cs
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/libsecondlife-dev/2006-December/index.html" >
+   <LINK REL="made" HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20IndexOutOfRangeException%20in%20ZeroDecode%0A%09Helpers.cs&In-Reply-To=%3C1d09f8b80612031916q6b1f575bw56e56add9a9267f%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000009.html">
+   <LINK REL="Next"  HREF="000011.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Libsecondlife-dev] IndexOutOfRangeException in ZeroDecode	Helpers.cs</H1>
+    <B>Will Buik</B> 
+    <A HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20IndexOutOfRangeException%20in%20ZeroDecode%0A%09Helpers.cs&In-Reply-To=%3C1d09f8b80612031916q6b1f575bw56e56add9a9267f%40mail.gmail.com%3E"
+       TITLE="[Libsecondlife-dev] IndexOutOfRangeException in ZeroDecode	Helpers.cs">willbuik at gmail.com
+       </A><BR>
+    <I>Mon Dec  4 04:16:31 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000009.html">[Libsecondlife-dev] [Bug #9601] Logout Broken
+</A></li>
+        <LI>Next message: <A HREF="000011.html">[Libsecondlife-dev] IndexOutOfRangeException in	ZeroDecode	Helpers.cs
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10">[ date ]</a>
+              <a href="thread.html#10">[ thread ]</a>
+              <a href="subject.html#10">[ subject ]</a>
+              <a href="author.html#10">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I am getting the following error in libsecondlife after about 2 or 3 minutes
+of use:
+
+System.IndexOutOfRangeException was unhandled
+  Message=&quot;Index was outside the bounds of the array.&quot;
+  Source=&quot;libsecondlife&quot;
+  StackTrace:
+       at libsecondlife.Helpers.ZeroDecode(Byte[] src, Int32 srclen, Byte[]
+dest) in ...\libsecondlife\libsecondlife-cs\Helpers.cs:line 323
+       at libsecondlife.Packets.Packet.BuildPacket(Byte[] bytes, Int32&amp;
+packetEnd, Byte[] zeroBuffer) in
+...\libsecondlife\libsecondlife-cs\_Packets_.cs:line 2064
+       at libsecondlife.Simulator.OnReceivedData(IAsyncResult result) in
+...\libsecondlife\libsecondlife-cs\NetworkManager.cs:line 430
+       at System.Net.LazyAsyncResult.Complete(IntPtr userToken)
+       at System.Net.ContextAwareResult.CompleteCallback(Object state)
+       at System.Threading.ExecutionContext.Run(ExecutionContext
+executionContext, ContextCallback callback, Object state)
+       at System.Net.ContextAwareResult.Complete(IntPtr userToken)
+       at System.Net.LazyAsyncResult.ProtectedInvokeCallback(Object result,
+IntPtr userToken)
+       at
+System.Net.Sockets.BaseOverlappedAsyncResult.CompletionPortCallback(UInt32
+errorCode, UInt32 numBytes, NativeOverlapped* nativeOverlapped)
+       at System.Threading._IOCompletionCallback.PerformIOCompletionCallback(UInt32
+errorCode, UInt32 numBytes, NativeOverlapped* pOVERLAP)
+
+I am using revision 677 now but I was getting the error in some previous
+revisions as well.  Sorry if this is the wrong place to bring this up.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/libsecondlife-dev/attachments/20061203/52ea85ad/attachment.html">https://lists.berlios.de/pipermail/libsecondlife-dev/attachments/20061203/52ea85ad/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000009.html">[Libsecondlife-dev] [Bug #9601] Logout Broken
+</A></li>
+	<LI>Next message: <A HREF="000011.html">[Libsecondlife-dev] IndexOutOfRangeException in	ZeroDecode	Helpers.cs
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10">[ date ]</a>
+              <a href="thread.html#10">[ thread ]</a>
+              <a href="subject.html#10">[ subject ]</a>
+              <a href="author.html#10">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">More information about the Libsecondlife-dev
+mailing list</a><br>
+</body></html>

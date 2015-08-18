@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Libsecondlife-dev] Cache Delete Message
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/libsecondlife-dev/2006-December/index.html" >
+   <LINK REL="made" HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20Cache%20Delete%20Message&In-Reply-To=%3C4596D451.5070909%40laserfur.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000104.html">
+   <LINK REL="Next"  HREF="000107.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Libsecondlife-dev] Cache Delete Message</H1>
+    <B>Bill, grumble</B> 
+    <A HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20Cache%20Delete%20Message&In-Reply-To=%3C4596D451.5070909%40laserfur.com%3E"
+       TITLE="[Libsecondlife-dev] Cache Delete Message">grumble at laserfur.com
+       </A><BR>
+    <I>Sat Dec 30 22:04:17 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000104.html">[Libsecondlife-dev] Cache Delete Message
+</A></li>
+        <LI>Next message: <A HREF="000107.html">[Libsecondlife-dev] Packet Scripts vs. LSL Scripts
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#105">[ date ]</a>
+              <a href="thread.html#105">[ thread ]</a>
+              <a href="subject.html#105">[ subject ]</a>
+              <a href="author.html#105">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE><A HREF="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">sbg at acw.com</A> wrote:
+&gt;<i> Is there a way to tell the viewer that it needs to delete its cache?
+</I>&gt;<i> Thanks for any insight.
+</I>&gt;<i> Cheers, Scott
+</I>
+I see that there is a checksum command for objects(prims), but
+it appears that LL client clears the object cache at startup.
+
+The cache should have a &quot;cache version number&quot; so that if
+the data format changes, the application can delete it.
+-
+note cards, textures, animations and sounds are all static and get
+a new UUID if changed. The cache should delete the oldest based on
+the &quot;last time used&quot; when trimming it's size.
+
+--
+Objects should be cached based on a flag system since the client
+only gets updates when you are around.
+  The &quot;in world&quot; objects should be sorted by which 32m box it is in
+and then when entering a box all the objects should be flagged.
+If the sim does not update the object within 1 minute or so, remove
+it from the object cache.
+
+  There is a way to have the cache check the sim for the existence
+of a object by using the packet to request the CRC, but due to possible
+updates during the process, it is simpler to get the objects as it
+streams and remove ghosts by removing objects if you get the same UUID
+elsewhere in the sim or if not seen after x seconds.
+
+-- 
+Bill, Grumble
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000104.html">[Libsecondlife-dev] Cache Delete Message
+</A></li>
+	<LI>Next message: <A HREF="000107.html">[Libsecondlife-dev] Packet Scripts vs. LSL Scripts
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#105">[ date ]</a>
+              <a href="thread.html#105">[ thread ]</a>
+              <a href="subject.html#105">[ subject ]</a>
+              <a href="author.html#105">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">More information about the Libsecondlife-dev
+mailing list</a><br>
+</body></html>

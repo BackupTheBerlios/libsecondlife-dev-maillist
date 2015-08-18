@@ -1,0 +1,94 @@
+From jef at pleiades.ca  Mon Nov 27 23:57:34 2006
+From: jef at pleiades.ca (Jonathan Freedman)
+Date: Mon, 27 Nov 2006 18:57:34 -0400
+Subject: [Libsecondlife-dev] TEST
+Message-ID: <456B6D5E.7020200@pleiades.ca>
+
+This message will self destruct in llSetTimerEvent(5);
+
+
+From mindtriggerz at gmail.com  Tue Nov 28 00:02:21 2006
+From: mindtriggerz at gmail.com (Jesse Nesbitt)
+Date: Mon, 27 Nov 2006 18:02:21 -0500
+Subject: [Libsecondlife-dev] TEST
+In-Reply-To: <456B6D5E.7020200@pleiades.ca>
+References: <456B6D5E.7020200@pleiades.ca>
+Message-ID: <eddb9050611271502w2648f868o1082227e6a1b6252@mail.gmail.com>
+
+Whoops, I overloaded the stack.
+
+On 11/27/06, Jonathan Freedman <jef at pleiades.ca> wrote:
+> This message will self destruct in llSetTimerEvent(5);
+> _______________________________________________
+> Libsecondlife-dev mailing list
+> Libsecondlife-dev at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/libsecondlife-dev
+>
+
+
+-- 
+--Jesse
+
+
+From jhurliman at wsu.edu  Tue Nov 28 00:04:03 2006
+From: jhurliman at wsu.edu (John Hurliman)
+Date: Mon, 27 Nov 2006 15:04:03 -0800
+Subject: [Libsecondlife-dev] TEST
+In-Reply-To: <456B6D5E.7020200@pleiades.ca>
+References: <456B6D5E.7020200@pleiades.ca>
+Message-ID: <456B6EE3.9040300@wsu.edu>
+
+We have a mailing list!
+
+
+From jhurliman at wsu.edu  Wed Nov 29 13:44:17 2006
+From: jhurliman at wsu.edu (John Hurliman)
+Date: Wed, 29 Nov 2006 04:44:17 -0800
+Subject: [Libsecondlife-dev] Licensing terms of svn code
+Message-ID: <456D80A1.5060707@wsu.edu>
+
+This is a followup to a conversation I saw in IRC regarding a Microsoft 
+Shared Source licensed file in the repository (and it being removed in 
+favor of homemade code). One of the early goals of the libsecondlife 
+project was to lower the barrier to entry for anyone who wanted to use 
+the code, whether it was a hobby developer or a large corporation. To 
+help lower the barrier to entry we determined that all code the 
+libsecondlife project distributes will be under a single, very liberal 
+license, and this would be strictly enforced to prevent license 
+confusion. The particular license in question (Microsoft Community 
+License (Ms-CL)) is a fine license on it's own, but it demands that 
+individual files licensed under Ms-CL stay Ms-CL. This creates another 
+license in the code repository that potential developers have to review, 
+determine what implications using that piece of code has, etc. To avoid 
+turning the repository in to a legal minefield, the rule of thumb is if 
+the license allows code to be relicensed under the BSD license then do 
+it and commit it. If it's your own code then it must be under the same 
+BSD license, but you keep the copyright to anything you write.
+
+I hope I'm not jumping in front of the project leader with this, but the 
+description above is the state of things at this moment.
+
+John Hurliman
+
+
+From admin at berlios.de  Thu Nov 30 00:54:33 2006
+From: admin at berlios.de (admin at berlios.de)
+Date: Wed, 29 Nov 2006 14:54:33 -0900 (AKST)
+Subject: [Libsecondlife-dev] [Patch #1671] IM Module for TestClient
+Message-ID: <200611292354.kATNsXI8022666@unicorn.berlios.de>
+
+Patch #1671 has been updated. 
+
+Project: libsecondlife
+Category: None
+Status: Open
+Submitted by: sm0key
+Assigned to : none
+Summary: IM Module for TestClient
+
+-------------------------------------------------------
+For more info, visit:
+
+http://developer.berlios.de/patch/?func=detailpatch&patch_id=1671&group_id=7710
+
+

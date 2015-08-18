@@ -1,0 +1,26 @@
+From bogus@does.not.exist.com  Wed Mar 14 15:21:59 2012
+From: bogus@does.not.exist.com ()
+Date: Wed, 14 Mar 2012 14:21:59 -0000
+Subject: No subject
+Message-ID: <mailman.0.1331734919.5016.libsecondlife-dev@lists.berlios.de>
+
+on the following options:
+- random modification/deterioration of textures, prims etc by server prior
+to send to client
+- eula + banstick
+
+------=_Part_13412_8971871.1166748566307
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+
+From bogus@does.not.exist.com  Wed Mar 14 15:21:59 2012
+From: bogus@does.not.exist.com ()
+Date: Wed, 14 Mar 2012 14:21:59 -0000
+Subject: No subject
+Message-ID: <mailman.1.1331734919.5016.libsecondlife-dev@lists.berlios.de>
+
+------=_Part_13412_8971871.1166748566307--
+
+

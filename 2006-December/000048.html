@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Libsecondlife-dev] FYI: Uncaught Analyst Exception
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/libsecondlife-dev/2006-December/index.html" >
+   <LINK REL="made" HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20FYI%3A%20Uncaught%20Analyst%20Exception&In-Reply-To=%3C1212.70.112.222.206.1166212833.squirrel%40www.acw.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000045.html">
+   <LINK REL="Next"  HREF="000046.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Libsecondlife-dev] FYI: Uncaught Analyst Exception</H1>
+    <B>sbg at acw.com</B> 
+    <A HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20FYI%3A%20Uncaught%20Analyst%20Exception&In-Reply-To=%3C1212.70.112.222.206.1166212833.squirrel%40www.acw.com%3E"
+       TITLE="[Libsecondlife-dev] FYI: Uncaught Analyst Exception">sbg at acw.com
+       </A><BR>
+    <I>Fri Dec 15 21:00:33 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000045.html">[Libsecondlife-dev] NPC
+</A></li>
+        <LI>Next message: <A HREF="000046.html">[Libsecondlife-dev] [Bug #9724] TestClient SetAppearanceCommand	replicates code
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#48">[ date ]</a>
+              <a href="thread.html#48">[ thread ]</a>
+              <a href="subject.html#48">[ subject ]</a>
+              <a href="author.html#48">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Running Analyst --log-all &gt; packet.log ...
+
+Unhandled Exception: System.Net.Sockets.SocketException: An existing
+connection
+was forcibly closed by the remote host
+   at System.Net.Sockets.Socket.DoBeginReceiveFrom(Byte[] buffer, Int32
+offset,
+Int32 size, SocketFlags socketFlags, EndPoint endPointSnapshot,
+SocketAddress so
+cketAddress, OverlappedAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.BeginReceiveFrom(Byte[] buffer, Int32
+offset, In
+t32 size, SocketFlags socketFlags, EndPoint&amp; remoteEP, AsyncCallback
+callback, O
+bject state)
+   at SLProxy.Proxy.ReceiveFromSim(IAsyncResult ar) in
+C:\trunk721\SLProxy\SLPro
+xy.cs:line 507
+   at System.Net.LazyAsyncResult.Complete(IntPtr userToken)
+   at System.Net.ContextAwareResult.CompleteCallback(Object state)
+   at System.Threading.ExecutionContext.Run(ExecutionContext
+executionContext, C
+ontextCallback callback, Object state)
+   at System.Net.ContextAwareResult.Complete(IntPtr userToken)
+   at System.Net.LazyAsyncResult.ProtectedInvokeCallback(Object result,
+IntPtr u
+serToken)
+   at
+System.Net.Sockets.BaseOverlappedAsyncResult.CompletionPortCallback(UInt32
+ errorCode, UInt32 numBytes, NativeOverlapped* nativeOverlapped)
+   at
+System.Threading._IOCompletionCallback.PerformIOCompletionCallback(UInt32
+errorCode, UInt32 numBytes, NativeOverlapped* pOVERLAP)
+
+c:\trunk721\bin&gt;
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000045.html">[Libsecondlife-dev] NPC
+</A></li>
+	<LI>Next message: <A HREF="000046.html">[Libsecondlife-dev] [Bug #9724] TestClient SetAppearanceCommand	replicates code
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#48">[ date ]</a>
+              <a href="thread.html#48">[ thread ]</a>
+              <a href="subject.html#48">[ subject ]</a>
+              <a href="author.html#48">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">More information about the Libsecondlife-dev
+mailing list</a><br>
+</body></html>

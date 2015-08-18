@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Libsecondlife-dev] Boot Sequence State Machine(s)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/libsecondlife-dev/2006-December/index.html" >
+   <LINK REL="made" HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20Boot%20Sequence%20State%20Machine%28s%29&In-Reply-To=%3C4332.209.150.51.147.1167248900.squirrel%40www.acw.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000092.html">
+   <LINK REL="Next"  HREF="000094.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Libsecondlife-dev] Boot Sequence State Machine(s)</H1>
+    <B>sbg at acw.com</B> 
+    <A HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20Boot%20Sequence%20State%20Machine%28s%29&In-Reply-To=%3C4332.209.150.51.147.1167248900.squirrel%40www.acw.com%3E"
+       TITLE="[Libsecondlife-dev] Boot Sequence State Machine(s)">sbg at acw.com
+       </A><BR>
+    <I>Wed Dec 27 20:48:20 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000092.html">[Libsecondlife-dev] Boot Sequence State Machine(s)
+</A></li>
+        <LI>Next message: <A HREF="000094.html">[Libsecondlife-dev] Boot Sequence State Machine(s)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#93">[ date ]</a>
+              <a href="thread.html#93">[ thread ]</a>
+              <a href="subject.html#93">[ subject ]</a>
+              <a href="author.html#93">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I was unclear.  I was thinking of the transition between the initial cache
+update &amp; priming phase and steady state message shuffling.  I've noticed
+that the server seems to idle by sending the client StartPingChecks to let
+the client digest what it has been sent and ask for anything additional it
+thinks it could use.  The transition seems to be when 1) the client's
+CompletePingCheck is up-to-date, 2) the client isn't making any more
+requests and 3) the server has no additional precache information to send.
+ Now we're at a quiescent steady state and the games can begin.
+
+&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">sbg at acw.com</A> wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> For example, as a very basic question, how does the client know that the
+</I>&gt;&gt;<i> server is done sending it cache information so that it can finish
+</I>&gt;&gt;<i> digesting what it has and turn control over to the user?
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> The server is never done sending information, it's constantly streamed
+</I>&gt;<i> for the entire connection. The turning point in the official client
+</I>&gt;<i> appears to be when the clothing assets have finished downloading and the
+</I>&gt;<i> appearance is sent back to the server. There's nothing fundamentally
+</I>&gt;<i> stopping you from moving around and doing things before that, but SL is
+</I>&gt;<i> less enjoyable if you can't see your avatar.
+</I>&gt;<i>
+</I>&gt;<i> John
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Libsecondlife-dev mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">Libsecondlife-dev at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">https://lists.berlios.de/mailman/listinfo/libsecondlife-dev</A>
+</I>&gt;<i>
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000092.html">[Libsecondlife-dev] Boot Sequence State Machine(s)
+</A></li>
+	<LI>Next message: <A HREF="000094.html">[Libsecondlife-dev] Boot Sequence State Machine(s)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#93">[ date ]</a>
+              <a href="thread.html#93">[ thread ]</a>
+              <a href="subject.html#93">[ subject ]</a>
+              <a href="author.html#93">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">More information about the Libsecondlife-dev
+mailing list</a><br>
+</body></html>

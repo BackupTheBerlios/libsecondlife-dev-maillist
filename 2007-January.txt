@@ -1,0 +1,2040 @@
+From jhurliman at wsu.edu  Mon Jan  1 01:19:19 2007
+From: jhurliman at wsu.edu (John Hurliman)
+Date: Sun, 31 Dec 2006 16:19:19 -0800
+Subject: [Libsecondlife-dev] Packet Scripts vs. LSL Scripts
+In-Reply-To: <2702.209.150.51.147.1167594296.squirrel@www.acw.com>
+References: <1317.209.150.51.147.1167191471.squirrel@www.acw.com>	<45928858.6030004@wsu.edu>	<4332.209.150.51.147.1167248900.squirrel@www.acw.com>	<3422.209.150.51.147.1167500395.squirrel@www.acw.com>
+	<2702.209.150.51.147.1167594296.squirrel@www.acw.com>
+Message-ID: <45985387.9010203@wsu.edu>
+
+sbg at acw.com wrote:
+> Does the term "Script" in such message names as:
+>
+> ScriptAnswerYes
+> ScriptQuestion
+> ScriptControlChange
+> ForceScriptControlRelease
+> SetScriptRunning
+> ScriptReset
+> RezScript
+>
+> ScriptDialogReply
+> ScriptDialog
+>
+> have any relationship to LSL scripts?  If so, since ScriptDialog is
+> sim->viewer and ScriptDialogReply is viewer->sim, does this mean that
+> a sim can trigger the running LSL script on a viewer and retrieve
+> the results?
+>
+> Also if so, does RezScript mean a sim can inject an LSL script into
+> an object and then run it as above?
+>
+> Thanks for any insight.
+>
+> Cheers, Scott
+>
+>   
+
+ScriptDialog / ScriptDialogReply are for dialog boxes created by scripts 
+that ask an avatar a question and the avatar presses a button to reply. 
+The viewer doesn't have an LSL interpreter and no actual LSL bytecode is 
+ever sent to viewers, scripts are all run on the simulators. If I recall 
+RezScript was a viewer->sim command that tells the sim to instantiate a 
+script that's been put in to the inventory of an object in a simulator, 
+but I'm not positive. You can find a lot of this out with SLProxy and 
+some trial and error.
+
+
+From admin at berlios.de  Thu Jan  4 10:19:25 2007
+From: admin at berlios.de (admin at berlios.de)
+Date: Thu, 4 Jan 2007 01:19:25 -0800 (PST)
+Subject: [Libsecondlife-dev] [Bug #9863] Rename Logout to RequestLogout and
+	add a blocking Logout
+Message-ID: <200701040919.l049JPVW006862@unicorn.berlios.de>
+
+Bug #9863, was updated on 2007-Jan-04 01:19
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: None
+Status: Open
+Resolution: None
+Bug Group: Incomplete Code
+Priority: 3
+Submitted by: jhurliman
+Assigned to : jhurliman
+Summary: Rename Logout to RequestLogout and add a blocking Logout
+
+Details: The NetworkManager.Logout function currently does not block, but many example programs and applications are using it like it does. To follow the design of the rest of the library, this asynchronous function should be renamed to RequestLogout() and a Logout() function added that blocks with a ManualResetEvent and a timeout value added to Settings.
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=9863&group_id=7710
+
+
+From admin at berlios.de  Fri Jan  5 12:07:14 2007
+From: admin at berlios.de (admin at berlios.de)
+Date: Fri, 5 Jan 2007 03:07:14 -0800 (PST)
+Subject: [Libsecondlife-dev] [Bug #9872] RSS feed for the libsecondlife.org
+	phpBB forum
+Message-ID: <200701051107.l05B7Eev007768@unicorn.berlios.de>
+
+Bug #9872, was updated on 2007-Jan-05 03:07
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: None
+Status: Open
+Resolution: None
+Bug Group: Feature Request
+Priority: 3
+Submitted by: jhurliman
+Assigned to : none
+Summary: RSS feed for the libsecondlife.org phpBB forum
+
+Details: http://www.phpbb.com/phpBB/viewtopic.php?t=144548
+
+Can we get this installed on the server please Baba?
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=9872&group_id=7710
+
+
+From admin at berlios.de  Fri Jan  5 12:07:47 2007
+From: admin at berlios.de (admin at berlios.de)
+Date: Fri, 5 Jan 2007 03:07:47 -0800 (PST)
+Subject: [Libsecondlife-dev] [Bug #9724] TestClient SetAppearanceCommand
+	replicates code
+Message-ID: <200701051107.l05B7lxD007811@unicorn.berlios.de>
+
+Bug #9724, was updated on 2006-Dec-14 16:44
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: None
+Status: Closed
+Resolution: Fixed
+Bug Group: None
+Priority: 5
+Submitted by: benfassbinder
+Assigned to : none
+Summary: TestClient SetAppearanceCommand replicates code
+
+Details: In libsecondlife-cs/examples/TestClient/Commands/ the files AppearanceCommand.cs and SetAppearanceCommand.cs both provide the same class.  Recommend SetAppearanceCommand.cs be removed from the repository.
+
+Follow-Ups:
+
+Date: 2007-Jan-05 03:07
+By: jhurliman
+
+Comment:
+The duplicate command has been removed from svn
+-------------------------------------------------------
+
+Date: 2006-Dec-14 22:19
+By: benfassbinder
+
+Comment:
+Or remove AppearanceCommand.cs :)
+-------------------------------------------------------
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=9724&group_id=7710
+
+
+From admin at berlios.de  Fri Jan  5 12:10:29 2007
+From: admin at berlios.de (admin at berlios.de)
+Date: Fri, 5 Jan 2007 03:10:29 -0800 (PST)
+Subject: [Libsecondlife-dev] [Bug #9849] TestClient OnInstantMessage problem
+Message-ID: <200701051110.l05BATNF008012@unicorn.berlios.de>
+
+Bug #9849, was updated on 2006-Dec-31 11:08
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: None
+Status: Closed
+Resolution: Fixed
+Bug Group: Buggy Code
+Priority: 3
+Submitted by: jhurliman
+Assigned to : jhurliman
+Summary: TestClient OnInstantMessage problem
+
+Details: WARNING: Tried to send a PacketAck on a closed socket
+WARNING: Tried to send a PacketAck on a closed socket
+WARNING: Tried to send a PacketAck on a closed socket
+WARNING: Tried to send a PacketAck on a closed socket
+WARNING: Tried to send a CompletePingCheck on a closed socket
+WARNING: Tried to send a CompletePingCheck on a closed socket
+WARNING: Tried to send a CompletePingCheck on a closed socket
+WARNING: Tried to send a CompletePingCheck on a closed socket
+INFO: Received a duplicate SimulatorViewerTimeMessage, sequence=1999, resent=Yes, Inbox.Count=100, NeedAck.Co                 unt=2
+INFO: Received a duplicate SimulatorViewerTimeMessage, sequence=2259, resent=Yes, Inbox.Count=100, NeedAck.Co                 unt=2
+INFO: Received a duplicate SimulatorViewerTimeMessage, sequence=2204, resent=Yes, Inbox.Count=100, NeedAck.Co                 unt=3
+INFO: Received a duplicate SimulatorViewerTimeMessage, sequence=1943, resent=Yes, Inbox.Count=100, NeedAck.Co                 unt=3
+INFO: Received a duplicate SimulatorViewerTimeMessage, sequence=2101, resent=Yes, Inbox.Count=100, NeedAck.Co                 unt=3
+INFO: Received a duplicate SimulatorViewerTimeMessage, sequence=1923, resent=Yes, Inbox.Count=100, NeedAck.Co                 unt=3
+INFO: Received a duplicate SimulatorViewerTimeMessage, sequence=2058, resent=Yes, Inbox.Count=100, NeedAck.Co                 unt=3
+INFO: Received a duplicate SimulatorViewerTimeMessage, sequence=2213, resent=Yes, Inbox.Count=100, NeedAck.Co                 unt=3
+INFO: Received a duplicate SimulatorViewerTimeMessage, sequence=2289, resent=Yes, Inbox.Count=100, NeedAck.Co                 unt=3
+INFO: Received a duplicate SimulatorViewerTimeMessage, sequence=2284, resent=Yes, Inbox.Count=100, NeedAck.Co                 unt=3
+WARNING: Tried to send a RequestMultipleObjects on a closed socket
+WARNING: Tried to send a RequestMultipleObjects on a closed socket
+WARNING: Tried to send a RequestMultipleObjects on a closed socket
+WARNING: Tried to send a RequestMultipleObjects on a closed socket
+WARNING: Tried tWARNING: Tried to send a CompletePingCheck on a closed socket
+WARNING: Tried to send a CompletePingCheck on a closed socket
+WARNING: Tried to send a CompletePingCheck on a closed socket
+WARNING: Tried to send a CompletePingCheck on a closed socket
+o send a CompletePingCheck on a closed socket
+WARNING: Tried to send a PacketAck on a closed socket
+
+** (TestClient.exe:24807): WARNING **: unknown address family 0xffda
+INFO: 64.129.40.51:13003 socket is closed, shutting down Anarchia
+
+** (TestClient.exe:24807): WARNING **: unknown address family 0xffda
+INFO: 64.129.40.51:13003 socket is closed, shutting down Anarchia
+
+** (TestClient.exe:24807): WARNING **: unknown address family 0xffda
+INFO: 64.129.40.51:13003 socket is closed, shutting down Anarchia
+
+** (TestClient.exe:24807): WARNING **: unknown address family 0xffda
+INFO: 64.129.40.51:13003 socket is closed, shutting down Anarchia
+INFO: Received a duplicate KillObject, sequence=6887, resent=Yes, Inbox.Count=100, NeedAck.Count=1
+
+** (TestClient.exe:24807): WARNING **: unknown address family 0xffda
+INFO: 64.129.40.51:13003 socket is closed, shutting down Anarchia
+
+** (TestClient.exe:24807): WARNING **: unknown address family 0xffda
+INFO: 64.129.40.51:13003 socket is closed, shutting down Anarchia
+INFO: Resending CompletePingCheck packet, 4516ms have passed
+<IM>Inyur Orbit (not in group): Vegas New Years Party.|Yes..New Years is apon us here at Las Vegas, come on o                 ut and spend the last day of 2006 with me.  My day is a day ahead because of my time zone.
+
+@aa6765cd389d4b87a637daa037690159:<162.203, 112.301, 25.4255>
+INFO: Resending RequestMultipleObjects packet, 4241ms have passed
+INFO: Resending RequestMultipleObjects packet, 4372ms have passed
+INFO: Resending RequestMultipleObjects packet, 4370ms have passed
+INFO: Resending RequestMultipleObjects packet, 4153ms have passed
+INFO: Resending CompletePingCheck packet, 4225ms have passed
+INFO: Resending RequestMultipleObjects packet, 4399ms have passed
+INFO: Resending RequestMultipleObjects packet, 4398ms have passed
+INFO: Resending RequestMultipleObjects packet, 4396ms have passed
+INFO: Resending RequestMultipleObjects packet, 4393ms have passed
+INFO: Resending RequestMultipleObjects packet, 4392ms have passed
+INFO: Resending RequestMultipleObjects packet, 4388ms have passed
+INFO: Resending RequestMultipleObjects packet, 4386ms have passed
+INFO: Resending CompletePingCheck packet, 4398ms have passed
+INFO: Resending CompletePingCheck packet, 4075ms have passed
+INFO: Resending CompletePingCheck packet, 4020ms have passed
+INFO: Resending CompletePingCheck packet, 4023ms have passed
+INFO: Resending CompletePingCheck packet, 4012ms have passed
+INFO: Resending CompletePingCheck packet, 4348ms have passed
+INFO: Resending CompletePingCheck packet, 4283ms have passed
+INFO: Resending CompletePingCheck packet, 4225ms have passed
+INFO: Resending CompletePingCheck packet, 4476ms have passed
+INFO: Resending CompletePingCheck packet, 4438ms have passed
+INFO: Resending RequestMultipleObjects packet, 4412ms have passed
+INFO: Resending CompletePingCheck packet, 4073ms have passed
+INFO: Resending CompletePingCheck packet, 4401ms have passed
+INFO: Resending CompletePingCheck packet, 4397ms have passed
+INFO: Resending CompletePingCheck packet, 4257ms have passed
+INFO: Resending CompletePingCheck packet, 4291ms have passed
+INFO: Resending CompletePingCheck packet, 4345ms have passed
+INFO: Resending CompletePingCheck packet, 4229ms have passed
+INFO: Resending CompletePingCheck packet, 4449ms have passed
+INFO: Resending CompletePingCheck packet, 4490ms have passed
+INFO: Resending CompletePingCheck packet, 4450ms have passed
+INFO: Resending CompletePingCheck packet, 4196ms have passed
+INFO: Resending CompletePingCheck packet, 4086ms have passed
+INFO: Resending CompletePingCheck packet, 4161ms have passed
+INFO: Resending CompletePingCheck packet, 4446ms have passed
+INFO: Resending RequestMultipleObjects packet, 4125ms have passed
+INFO: Resending CompletePingCheck packet, 4359ms have passed
+INFO: Resending CompletePingCheck packet, 4135ms have passed
+INFO: Resending CompletePingCheck packet, 4203ms have passed
+INFO: Resending CompletePingCheck packet, 4239ms have passed
+INFO: Resending CompletePingCheck packet, 4253ms have passed
+INFO: Resending CompletePingCheck packet, 4329ms have passed
+INFO: Resending CompletePingCheck packet, 4486ms have passed
+INFO: Resending CompletePingCheck packet, 4045ms have passed
+INFO: Resending CompletePingCheck packet, 4040ms have passed
+INFO: Resending CompletePingCheck packet, 4311ms have passed
+INFO: Resending CompletePingCheck packet, 4495ms have passed
+INFO: Resending CompletePingCheck packet, 4392ms have passed
+INFO: Resending CompletePingCheck packet, 4431ms have passed
+INFO: Resending CompletePingCheck packet, 4132ms have passed
+INFO: Resending CompletePingCheck packet, 4350ms have passed
+INFO: Resending CompletePingCheck packet, 4325ms have passed
+INFO: Resending CompletePingCheck packet, 4232ms have passed
+INFO: Resending CompletePingCheck packet, 4083ms have passed
+INFO: Resending CompletePingCheck packet, 4172ms have passed
+<IM>SL Exchange Magic Box blue: SL Exchange - Delivered item Drug Table.
+INFO: Resending RequestMultipleObjects packet, 4084ms have passed
+INFO: Resending CompletePingCheck packet, 4156ms have passed
+INFO: Resending CompletePingCheck packet, 4424ms have passed
+INFO: Resending CompletePingCheck packet, 4046ms have passed
+INFO: Resending CompletePingCheck packet, 4103ms have passed
+INFO: Resending CompletePingCheck packet, 4493ms have passed
+INFO: Resending CompletePingCheck packet, 4373ms have passed
+<IM>fyrepunx Leader: Join me in Anarchia
+Accepting teleport lure
+<IM>fyrepunx Leader: Join me in Anarchia
+Accepting teleport lure
+<IM>fyrepunx Leader: sit
+Sat on f6aaafe7ee4d52cd55b9c78accd165d5. Distance: 0.613469660282135
+INFO: Resending CompletePingCheck packet, 4464ms have passed
+<IM>Gabriel9990 Burks (not in group): typing at 2560738794824e6c9f461a26af5cfcd4:<35.8, 43.7276, 23.1012>
+<IM>Gabriel9990 Burks (not in group): typing at 2560738794824e6c9f461a26af5cfcd4:<35.7697, 43.71, 23.102>
+<IM>Gabriel9990 Burks (not in group): hey need money please!!!!!!!@2560738794824e6c9f461a26af5cfcd4:<35.76974                 , 43.70997, 23.102>
+
+8 avatars online> uptime
+I am Spine Breaker, Up Since: 12/30/2006 16:30:58 (03:07:06.6082670)
+I am Get Backer, Up Since: 12/30/2006 16:30:44 (03:07:20.7795490)
+I am Anarchy Allstar, Up Since: 12/30/2006 16:31:00 (03:07:04.9076230)
+I am Keyboard Goldkey, Up Since: 12/30/2006 16:31:06 (03:06:59.5746490)
+I am Anarchy Independent, Up Since: 12/30/2006 16:31:04 (03:07:01.0319970)
+I am X13M Oe, Up Since: 12/30/2006 16:31:13 (03:06:52.4455360)
+I am Dope Herber, Up Since: 12/30/2006 16:30:52 (03:07:13.5685330)
+I am Anarchy Kit, Up Since: 12/30/2006 16:31:16 (03:06:49.2979390)
+I am SLLabs Backer, Up Since: 12/30/2006 16:30:50 (03:07:15.3801160)
+I am Punx Leader, Up Since: 12/30/2006 16:31:10 (03:06:55.5934090)
+I am Lustmord Demontrond, Up Since: 12/30/2006 16:30:55 (03:07:10.1468640)
+I am ThirtyEight Caliber, Up Since: 12/30/2006 16:31:08 (03:06:57.8913210)
+I am Anarchy Blackflag, Up Since: 12/30/2006 16:30:57 (03:07:08.5567450)
+I am NMAP Scanlan, Up Since: 12/30/2006 16:30:53 (03:07:12.1833770)
+8 avatars online> login nmap scanlan kawaii21459
+INFO: Connecting to 64.129.40.51:13003
+Logged in NMAP Scanlan
+9 avatars online> Got the group ID for NMAP Scanlan, requesting group members...
+INFO: Received a region handshake for Anarchia
+Got 52 group members.
+WARNING: Caught an exception in a packet callback: System.NullReferenceException: Object reference not set to                  an instance of an object
+  at libsecondlife.TestClient.TestClient.Self_OnInstantMessage (libsecondlife.LLUUID fromAgentID, System.Stri                 ng fromAgentName, libsecondlife.LLUUID toAgentID, UInt32 parentEstateID, libsecondlife.LLUUID regionID, LLVec                 tor3 position, Byte dialog, Boolean groupIM, libsecondlife.LLUUID imSessionID, DateTime timestamp, System.Str                 ing message, Byte offline, System.Byte[] binaryBucket) [0x00000]
+  at (wrapper delegate-invoke) System.MulticastDelegate:invoke_void_LLUUID_string_LLUUID_uint_LLUUID_LLVector                 3_byte_bool_LLUUID_DateTime_string_byte_byte[] (libsecondlife.LLUUID,string,libsecondlife.LLUUID,uint,libseco                 ndlife.LLUUID,libsecondlife.LLVector3,byte,bool,libsecondlife.LLUUID,System.DateTime,string,byte,byte[])
+  at libsecondlife.MainAvatar.InstantMessageHandler (libsecondlife.Packets.Packet packet, libsecondlife.Simul                 ator simulator) [0x00000]
+  at (wrapper delegate-invoke) System.MulticastDelegate:invoke_void_Packet_Simulator (libsecondlife.Packets.P                 acket,libsecondlife.Simulator)
+  at libsecondlife.Simulator.OnReceivedData (IAsyncResult result) [0x00000]
+WARNING: Caught an exception in a packet callback: System.NullReferenceException: Object reference not set to                  an instance of an object
+  at libsecondlife.TestClient.TestClient.Self_OnInstantMessage (libsecondlife.LLUUID fromAgentID, System.Stri                 ng fromAgentName, libsecondlife.LLUUID toAgentID, UInt32 parentEstateID, libsecondlife.LLUUID regionID, LLVec                 tor3 position, Byte dialog, Boolean groupIM, libsecondlife.LLUUID imSessionID, DateTime timestamp, System.Str                 ing message, Byte offline, System.Byte[] binaryBucket) [0x00000]
+  at (wrapper delegate-invoke) System.MulticastDelegate:invoke_void_LLUUID_string_LLUUID_uint_LLUUID_LLVector                 3_byte_bool_LLUUID_DateTime_string_byte_byte[] (libsecondlife.LLUUID,string,libsecondlife.LLUUID,uint,libseco                 ndlife.LLUUID,libsecondlife.LLVector3,byte,bool,libsecondlife.LLUUID,System.DateTime,string,byte,byte[])
+  at libsecondlife.MainAvatar.InstantMessageHandler (libsecondlife.Packets.Packet packet, libsecondlife.Simul                 ator simulator) [0x00000]
+  at (wrapper delegate-invoke) System.MulticastDelegate:invoke_void_Packet_Simulator (libsecondlife.Packets.P                 acket,libsecondlife.Simulator)
+  at libsecondlife.Simulator.OnReceivedData (IAsyncResult result) [0x00000]
+
+9 avatars online> WARNING: Caught an exception in a packet callback: System.NullReferenceException: Object re                 ference not set to an instance of an object
+  at libsecondlife.TestClient.TestClient.Self_OnInstantMessage (libsecondlife.LLUUID fromAgentID, System.Stri                 ng fromAgentName, libsecondlife.LLUUID toAgentID, UInt32 parentEstateID, libsecondlife.LLUUID regionID, LLVec                 tor3 position, Byte dialog, Boolean groupIM, libsecondlife.LLUUID imSessionID, DateTime timestamp, System.Str                 ing message, Byte offline, System.Byte[] binaryBucket) [0x00000]
+  at (wrapper delegate-invoke) System.MulticastDelegate:invoke_void_LLUUID_string_LLUUID_uint_LLUUID_LLVector                 3_byte_bool_LLUUID_DateTime_string_byte_byte[] (libsecondlife.LLUUID,string,libsecondlife.LLUUID,uint,libseco                 ndlife.LLUUID,libsecondlife.LLVector3,byte,bool,libsecondlife.LLUUID,System.DateTime,string,byte,byte[])
+  at libsecondlife.MainAvatar.InstantMessageHandler (libsecondlife.Packets.Packet packet, libsecondlife.Simul                 ator simulator) [0x00000]
+  at (wrapper delegate-invoke) System.MulticastDelegate:invoke_void_Packet_Simulator (libsecondlife.Packets.P                 acket,libsecondlife.Simulator)
+  at libsecondlife.Simulator.OnReceivedData (IAsyncResult result) [0x00000]
+INFO: Resending CompletePingCheck packet, 4360ms have passed
+INFO: Resending CompletePingCheck packet, 4345ms have passed
+<IM>Inyur Orbit (not in group): only 90 tickets left..|Come on out, only 90 tickets left..for the 10,000$L dr                 awing.
+Plus your chance to vote for one of the best casino's in SL.
+
+Quote from a professional casino player "THIS PLACE KICKS *SS".
+
+at 9 PM goning to have a Give and take game, only 10 seat's available. Chance to win over 380 L$ per round. I                 f no one wins the round, the pot rolls over till someone wins. Which could be 1000's. 50$L per player. Per ro                 und.
+
+Want to say Happy New Years. at aa6765cd389d4b87a637daa037690159:<163.673, 110.944, 25.4301>
+INFO: Resending CompletePingCheck packet, 4461ms have passed
+INFO: Resending CompletePingCheck packet, 4160ms have passed
+<IM>fyrepunx Leader: sit
+Sat on 0b6423052a2cf91dc83f747af091b7c6. Distance: 0.170405820012093
+<IM>fyrepunx Leader: Join me in Anarchia
+Accepting teleport lure
+
+9 avatars online> INFO: Resending CompletePingCheck packet, 4246ms have passed
+tor) [0x00000]
+  at (wrapper delegate-invoke) System.MulticastDelegate:invoke_void_Packet_Simulator (libsecondlife.Packets.Packet,libse      condlife.Simulator)
+  at libsecondlife.Simulator.OnReceivedData (IAsyncResult result) [0x00000]
+INFO: Resending CompletePingCheck packet, 4360ms have passed
+INFO: Resending CompletePingCheck packet, 4345ms have passed
+<IM>Inyur Orbit (not in group): only 90 tickets left..|Come on out, only 90 tickets left..for the 10,000$L drawing.
+Plus your chance to vote for one of the best casino's in SL.
+
+Quote from a professional casino player "THIS PLACE KICKS *SS".
+
+at 9 PM goning to have a Give and take game, only 10 seat's available. Chance to win over 380 L$ per round. If no one wi      ns the round, the pot rolls over till someone wins. Which could be 1000's. 50$L per player. Per round.
+
+Want to say Happy New Years. at aa6765cd389d4b87a637daa037690159:<163.673, 110.944, 25.4301>
+INFO: Resending CompletePingCheck packet, 4461ms have passed
+INFO: Resending CompletePingCheck packet, 4160ms have passed
+<IM>fyrepunx Leader: sit
+Sat on 0b6423052a2cf91dc83f747af091b7c6. Distance: 0.170405820012093
+<IM>fyrepunx Leader: Join me in Anarchia
+Accepting teleport lure
+
+9 avatars online> INFO: Resending CompletePingCheck packet, 4246ms have passed
+  at (wrapper delegate-invoke) System.MulticastDelegate:invoke_void_LLUUID_string_LLUUID_uint_LLUUID_LLVector3_byte_bool_LLUUID_DateTime_string_byte_byte[] (libsecondlife.LLUUID,string,libsecondlife.LLUUID,uint,libsecondlife.LLUUID,libsecondlife.LLVector3,byte,bool,libsecondlife.LLUUID,System.DateTime,string,byte,byte[])
+  at libsecondlife.MainAvatar.InstantMessageHandler (libsecondlife.Packets.Packet packet, libsecondlife.Simulator simulator) [0x00000]
+  at (wrapper delegate-invoke) System.MulticastDelegate:invoke_void_Packet_Simulator (libsecondlife.Packets.Packet,libsecondlife.Simulator)
+  at libsecondlife.Simulator.OnReceivedData (IAsyncResult result) [0x00000]
+
+9 avatars online> WARNING: Caught an exception in a packet callback: System.NullReferenceException: Object reference not set to an instance of an object
+  at libsecondlife.TestClient.TestClient.Self_OnInstantMessage (libsecondlife.LLUUID fromAgentID, System.String fromAgentName, libsecondlife.LLUUID toAgentID, UInt32 parentEstateID, libsecondlife.LLUUID regionID, LLVector3 position, Byte dialog, Boolean groupIM, libsecondlife.LLUUID imSessionID, DateTime timestamp, System.String message, Byte offline, System.Byte[] binaryBucket) [0x00000]
+  at (wrapper delegate-invoke) System.MulticastDelegate:invoke_void_LLUUID_string_LLUUID_uint_LLUUID_LLVector3_byte_bool_LLUUID_DateTime_string_byte_byte[] (libsecondlife.LLUUID,string,libsecondlife.LLUUID,uint,libsecondlife.LLUUID,libsecondlife.LLVector3,byte,bool,libsecondlife.LLUUID,System.DateTime,string,byte,byte[])
+  at libsecondlife.MainAvatar.InstantMessageHandler (libsecondlife.Packets.Packet packet, libsecondlife.Simulator simulator) [0x00000]
+  at (wrapper delegate-invoke) System.MulticastDelegate:invoke_void_Packet_Simulator (libsecondlife.Packets.Packet,libsecondlife.Simulator)
+  at libsecondlife.Simulator.OnReceivedData (IAsyncResult result) [0x00000]
+INFO: Resending CompletePingCheck packet, 4360ms have passed
+INFO: Resending CompletePingCheck packet, 4345ms have passed
+<IM>Inyur Orbit (not in group): only 90 tickets left..|Come on out, only 90 tickets left..for the 10,000$L drawing.
+Plus your chance to vote for one of the best casino's in SL.
+
+Quote from a professional casino player "THIS PLACE KICKS *SS".
+
+at 9 PM goning to have a Give and take game, only 10 seat's available. Chance to win over 380 L$ per round. If no one wins the round, the pot rolls over till someone wins. Which could be 1000's. 50$L per player. Per round.
+
+Want to say Happy New Years. at aa6765cd389d4b87a637daa037690159:<163.673, 110.944, 25.4301>
+INFO: Resending CompletePingCheck packet, 4461ms have passed
+INFO: Resending CompletePingCheck packet, 4160ms have passed
+<IM>fyrepunx Leader: sit
+Sat on 0b6423052a2cf91dc83f747af091b7c6. Distance: 0.170405820012093
+<IM>fyrepunx Leader: Join me in Anarchia
+Accepting teleport lure
+
+9 avatars online> INFO: Resending CompletePingCheck packet, 4246ms have passed
+
+
+Follow-Ups:
+
+Date: 2007-Jan-05 03:10
+By: jhurliman
+
+Comment:
+I believe the NullReferenceException in the IM callback was checking against the Master LLUUID when it was not set (null). This has been fixed and I'll assume the bug closed.
+-------------------------------------------------------
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=9849&group_id=7710
+
+
+From admin at berlios.de  Fri Jan  5 15:55:31 2007
+From: admin at berlios.de (admin at berlios.de)
+Date: Fri, 5 Jan 2007 06:55:31 -0800 (PST)
+Subject: [Libsecondlife-dev] [Bug #9872] RSS feed for the libsecondlife.org
+	phpBB forum
+Message-ID: <200701051455.l05EtVs2016124@unicorn.berlios.de>
+
+Bug #9872, was updated on 2007-Jan-05 03:07
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: None
+Status: Closed
+Resolution: Fixed
+Bug Group: Feature Request
+Priority: 3
+Submitted by: jhurliman
+Assigned to : none
+Summary: RSS feed for the libsecondlife.org phpBB forum
+
+Details: http://www.phpbb.com/phpBB/viewtopic.php?t=144548
+
+Can we get this installed on the server please Baba?
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=9872&group_id=7710
+
+
+From admin at berlios.de  Sun Jan  7 01:37:19 2007
+From: admin at berlios.de (admin at berlios.de)
+Date: Sat, 6 Jan 2007 20:37:19 -0400 (AST)
+Subject: [Libsecondlife-dev] [Bug #9887] CAPS issue
+Message-ID: <200701070037.l070bJMg010725@unicorn.berlios.de>
+
+Bug #9887, was updated on 2007-Jan-06 20:37
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: aditi
+Status: Open
+Resolution: None
+Bug Group: None
+Priority: 1
+Submitted by: otakup0pe
+Assigned to : none
+Summary: CAPS issue
+
+Details: In EventQueueGet: System.Net.WebException: The remote server returned an error:
+(502) Bad Gateway.
+   at System.Net.HttpWebRequest.GetResponse()
+   at libsecondlife.Caps.LLSDRequest(String uri, Object req) in C:\Documents and
+ Settings\jonathan\Desktop\libsl-aditi\libsecondlife-cs\NetworkManager.cs:line 6
+70
+   at libsecondlife.Caps.EventQueue() in C:\Documents and Settings\jonathan\Desk
+top\libsl-aditi\libsecondlife-cs\NetworkManager.cs:line 645
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=9887&group_id=7710
+
+
+From admin at berlios.de  Sun Jan  7 01:44:46 2007
+From: admin at berlios.de (admin at berlios.de)
+Date: Sat, 6 Jan 2007 16:44:46 -0800 (PST)
+Subject: [Libsecondlife-dev] [Bug #9888] RegionHandle on NewPrim event
+	incorrect.
+Message-ID: <200701070044.l070iku8020960@unicorn.berlios.de>
+
+Bug #9888, was updated on 2007-Jan-06 16:44
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: aditi
+Status: Open
+Resolution: None
+Bug Group: Buggy Code
+Priority: 5
+Submitted by: mcortez
+Assigned to : none
+Summary: RegionHandle on NewPrim event incorrect.
+
+Details: The following code should return the same RegionHandle for all three variables:
+
+==========
+protected void Objects_OnNewPrim(Simulator simulator, PrimObject NewPrim, ulong regionHandle, ushort timeDilation)
+{
+Console.WriteLine("Sim:  " + simulator.Region.Handle);
+Console.WriteLine("Prim: " + NewPrim.RegionHandle);
+Console.WriteLine("RgnH: " + regionHandle);
+======
+
+However, when run inside hooper by a bot with latest SVN, the first handle returned by simulator.Region.Handle is not equal to the one returned by the other two variables.
+
+I'm not sure which set is incorrect.
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=9888&group_id=7710
+
+
+From admin at berlios.de  Sun Jan  7 01:55:23 2007
+From: admin at berlios.de (admin at berlios.de)
+Date: Sat, 6 Jan 2007 20:55:23 -0400 (AST)
+Subject: [Libsecondlife-dev] [Bug #9887] CAPS issue
+Message-ID: <200701070055.l070tNaT005131@unicorn.berlios.de>
+
+Bug #9887, was updated on 2007-Jan-06 20:37
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: aditi
+Status: Open
+Resolution: None
+Bug Group: Buggy Code
+Priority: 6
+Submitted by: otakup0pe
+Assigned to : otakup0pe
+Summary: CAPS issue
+
+Details: In EventQueueGet: System.Net.WebException: The remote server returned an error:
+(502) Bad Gateway.
+   at System.Net.HttpWebRequest.GetResponse()
+   at libsecondlife.Caps.LLSDRequest(String uri, Object req) in C:\Documents and
+ Settings\jonathan\Desktop\libsl-aditi\libsecondlife-cs\NetworkManager.cs:line 6
+70
+   at libsecondlife.Caps.EventQueue() in C:\Documents and Settings\jonathan\Desk
+top\libsl-aditi\libsecondlife-cs\NetworkManager.cs:line 645
+
+Follow-Ups:
+
+Date: 2007-Jan-06 20:55
+By: otakup0pe
+
+Comment:
+Seems to be related to EventQueueGet based on CAPS URI
+-------------------------------------------------------
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=9887&group_id=7710
+
+
+From admin at berlios.de  Sun Jan  7 03:01:23 2007
+From: admin at berlios.de (admin at berlios.de)
+Date: Sat, 6 Jan 2007 18:01:23 -0800 (PST)
+Subject: [Libsecondlife-dev] [Bug #9890] Add event for when inventory is
+	added to
+Message-ID: <200701070201.l0721N9h014548@unicorn.berlios.de>
+
+Bug #9890, was updated on 2007-Jan-06 18:01
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: None
+Status: Open
+Resolution: None
+Bug Group: Feature Request
+Priority: 5
+Submitted by: deltaphc
+Assigned to : none
+Summary: Add event for when inventory is added to
+
+Details: Right now, there's no easy way to tell when inventory is added to (like when someone gives you inventory). It'd be great if there was an event for this.
+
+In addition, there could be an easy way to accept or decline inventory offers, but that's just a plus. :)
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=9890&group_id=7710
+
+
+From admin at berlios.de  Sun Jan  7 04:31:41 2007
+From: admin at berlios.de (admin at berlios.de)
+Date: Sat, 6 Jan 2007 19:31:41 -0800 (PST)
+Subject: [Libsecondlife-dev] [Bug #9888] RegionHandle not being set
+	correctly in Simulator.Region
+Message-ID: <200701070331.l073VffG019817@unicorn.berlios.de>
+
+Bug #9888, was updated on 2007-Jan-06 16:44
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: aditi
+Status: Open
+Resolution: None
+Bug Group: Buggy Code
+Priority: 5
+Submitted by: mcortez
+Assigned to : none
+Summary: RegionHandle not being set correctly in Simulator.Region
+
+Details: The following code should return the same RegionHandle for all three variables:
+
+==========
+protected void Objects_OnNewPrim(Simulator simulator, PrimObject NewPrim, ulong regionHandle, ushort timeDilation)
+{
+Console.WriteLine("Sim:  " + simulator.Region.Handle);
+Console.WriteLine("Prim: " + NewPrim.RegionHandle);
+Console.WriteLine("RgnH: " + regionHandle);
+======
+
+However, when run inside hooper by a bot with latest SVN, the first handle returned by simulator.Region.Handle is not equal to the one returned by the other two variables.
+
+I'm not sure which set is incorrect.
+
+Follow-Ups:
+
+Date: 2007-Jan-06 19:31
+By: mcortez
+
+Comment:
+okay, the problem has been tracked down to the Region class inside of Simulator is not getting it's Region Handle set correctly.  And it's simply getting set to your avatar's home region handle.
+-------------------------------------------------------
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=9888&group_id=7710
+
+
+From admin at berlios.de  Sun Jan  7 06:19:35 2007
+From: admin at berlios.de (admin at berlios.de)
+Date: Sat, 6 Jan 2007 20:19:35 -0900 (AKST)
+Subject: [Libsecondlife-dev] [Bug #9890] Add event for when inventory is
+	added to
+Message-ID: <200701070519.l075JZcm025449@unicorn.berlios.de>
+
+Bug #9890, was updated on 2007-Jan-06 17:01
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: None
+Status: Open
+Resolution: None
+Bug Group: Feature Request
+Priority: 5
+Submitted by: deltaphc
+Assigned to : none
+Summary: Add event for when inventory is added to
+
+Details: Right now, there's no easy way to tell when inventory is added to (like when someone gives you inventory). It'd be great if there was an event for this.
+
+In addition, there could be an easy way to accept or decline inventory offers, but that's just a plus. :)
+
+Follow-Ups:
+
+Date: 2007-Jan-06 20:19
+By: mindtriggerz
+
+Comment:
+Any contribution to the project is welcome, so if you come up with a patch, send it in.
+-------------------------------------------------------
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=9890&group_id=7710
+
+
+From jef at pleiades.ca  Mon Jan  8 16:33:11 2007
+From: jef at pleiades.ca (Jonathan Freedman)
+Date: Mon, 08 Jan 2007 11:33:11 -0400 (AST)
+Subject: [Libsecondlife-dev] kthx open source
+Message-ID: <Pine.LNX.4.58.0701081131380.1901@momos.pleiades.ca>
+
+Hello List,
+
+LL has announced the opening of the viewer source code. This is a good
+thing, and does not mean the end of libsecondlife. There are many areas
+which LL likely has no interest in pursuing, but which will be possible
+with a more generic library such as we are aiming for with libsecondlife.
+
+That being said, I'm sure we will make use of  some of this recently
+released source.
+
+Details on the blob @
+http://blog.secondlife.com/2007/01/08/embracing-the-inevitable/
+
+Cheers
+
+Jonathan Freedman
+Vice President
+Pleiades Consulting
+(902) 444-4335 x400
+
+
+From 2fast4u.nabob at gmail.com  Mon Jan  8 16:56:21 2007
+From: 2fast4u.nabob at gmail.com (2fast4u Nabob)
+Date: Mon, 8 Jan 2007 10:56:21 -0500
+Subject: [Libsecondlife-dev] kthx open source
+In-Reply-To: <Pine.LNX.4.58.0701081131380.1901@momos.pleiades.ca>
+References: <Pine.LNX.4.58.0701081131380.1901@momos.pleiades.ca>
+Message-ID: <fd9285740701080756g4a1e9972qd569cc172affd46@mail.gmail.com>
+
+Hi,
+
+I have been lurking here for a while :)
+
+Jonathan Freedman wrote.."This is a good thing, and does not mean the end of
+libsecondlife."
+
+I agree with Jonathan...the open source client  should make libsecondlife
+easier to implement since you don't have to reverse-engineer everything now
+but also creates some opportunities.
+
+One thing that came to mind is a having libsecondlife become a cohesive
+object model for alternate SL clients. libsecondlife could follow the
+pattern of the relationship between the Win32 API and the .NET Framework.
+Most people choose to use the .NET Framework instead of the Win32 API simply
+because the framework is a lot more approachable than the API - you can
+accomplish the same tasks in both cases, but faster and with fewer bugs than
+when you use the API directly.
+
+Also, just because the client is open source does not mean that everyone can
+immediately start creating their own SL clients - still need to analyze,
+walk through various scenarios, etc. A libsecondlife object model would go a
+long way to making SL more of a platform.
+
+-2fast
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/libsecondlife-dev/attachments/20070108/fb5a5d94/attachment.html>
+
+From jhurliman at wsu.edu  Mon Jan  8 18:41:12 2007
+From: jhurliman at wsu.edu (John Hurliman)
+Date: Mon, 08 Jan 2007 09:41:12 -0800
+Subject: [Libsecondlife-dev] kthx open source
+In-Reply-To: <fd9285740701080756g4a1e9972qd569cc172affd46@mail.gmail.com>
+References: <Pine.LNX.4.58.0701081131380.1901@momos.pleiades.ca>
+	<fd9285740701080756g4a1e9972qd569cc172affd46@mail.gmail.com>
+Message-ID: <45A28238.5050405@wsu.edu>
+
+2fast4u Nabob wrote:
+> Hi,
+>  
+> I have been lurking here for a while :)
+>  
+> Jonathan Freedman wrote.."This is a good thing, and does not mean the 
+> end of libsecondlife."
+>  
+> I agree with Jonathan...the open source client  should make 
+> libsecondlife easier to implement since you don't have to 
+> reverse-engineer everything now but also creates some opportunities.
+>  
+> One thing that came to mind is a having libsecondlife become a 
+> cohesive object model for alternate SL clients. libsecondlife could 
+> follow the pattern of the relationship between the Win32 API and the 
+> .NET Framework. Most people choose to use the .NET Framework instead 
+> of the Win32 API simply because the framework is a lot more 
+> approachable than the API - you can accomplish the same tasks in both 
+> cases, but faster and with fewer bugs than when you use the API directly.
+>  
+> Also, just because the client is open source does not mean that 
+> everyone can immediately start creating their own SL clients - still 
+> need to analyze, walk through various scenarios, etc. A libsecondlife 
+> object model would go a long way to making SL more of a platform.
+>  
+> -2fast
+>
+
+It's also important to note that libsecondlife is under a more liberal 
+license (BSD) than the viewer which will be released under the GPL. This 
+means there are scenarios where libsecondlife would make sense to use 
+and code adapted from the official viewer might not, and it also means 
+we need to be careful about pulling code out of the viewer and sticking 
+it in libsl.
+
+John
+
+
+From tpfennig at gmail.com  Mon Jan  8 23:58:42 2007
+From: tpfennig at gmail.com (Thilo Pfennig)
+Date: Mon, 8 Jan 2007 23:58:42 +0100
+Subject: [Libsecondlife-dev] kthx open source
+In-Reply-To: <45A28238.5050405@wsu.edu>
+References: <Pine.LNX.4.58.0701081131380.1901@momos.pleiades.ca>
+	<fd9285740701080756g4a1e9972qd569cc172affd46@mail.gmail.com>
+	<45A28238.5050405@wsu.edu>
+Message-ID: <2cbc44a0701081458h5bbf4d1aq8bbf3406f0bbbc06@mail.gmail.com>
+
+On 1/8/07, John Hurliman <jhurliman at wsu.edu> wrote:
+
+> It's also important to note that libsecondlife is under a more liberal
+> license (BSD) than the viewer which will be released under the GPL. This
+> means there are scenarios where libsecondlife would make sense to use
+> and code adapted from the official viewer might not, and it also means
+> we need to be careful about pulling code out of the viewer and sticking
+> it in libsl.
+
+I do not agree with "more liberal", because I say GPL protects
+liberty, while BSD licenses do not. But never mind.
+
+I am VERY happy about this move. I now would really love to make a
+definitive FLOSS meeting.
+
+I suggest tuesday 9th january at 9pm PST/SL Time. Where? Somebody make
+a suggestion. I will invite all those who are members of free software
+group.
+
+if other time or day is better please suggest.
+
+
+Vinci Calamari (in SL)
+
+-- 
+Blog: http://vinci.wordpress.com
+Linked In: http://www.linkedin.com/in/tpfennig
+
+
+From phoenix at secondlife.com  Tue Jan  9 04:24:53 2007
+From: phoenix at secondlife.com (Phoenix)
+Date: Mon, 8 Jan 2007 19:24:53 -0800
+Subject: [Libsecondlife-dev] kthx open source
+In-Reply-To: <2cbc44a0701081458h5bbf4d1aq8bbf3406f0bbbc06@mail.gmail.com>
+References: <Pine.LNX.4.58.0701081131380.1901@momos.pleiades.ca>
+	<fd9285740701080756g4a1e9972qd569cc172affd46@mail.gmail.com>
+	<45A28238.5050405@wsu.edu>
+	<2cbc44a0701081458h5bbf4d1aq8bbf3406f0bbbc06@mail.gmail.com>
+Message-ID: <BE8D34FB-3BC5-44B5-9A4E-B03ACFDF2DB2@secondlife.com>
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+On Jan 8, 2007, at 2:58 PM, Thilo Pfennig wrote:
+> On 1/8/07, John Hurliman <jhurliman at wsu.edu> wrote:
+>
+>> It's also important to note that libsecondlife is under a more  
+>> liberal
+>> license (BSD) than the viewer which will be released under the  
+>> GPL. This
+>> means there are scenarios where libsecondlife would make sense to use
+>> and code adapted from the official viewer might not, and it also  
+>> means
+>> we need to be careful about pulling code out of the viewer and  
+>> sticking
+>> it in libsl.
+>
+> I do not agree with "more liberal", because I say GPL protects
+> liberty, while BSD licenses do not. But never mind.
+
+Though I referred to a license as liberal recently, it is not a good  
+adjective for comparison between licenses. In comparing 'free'  
+licenses along the axis of 'liberated' I would argue that BSD  
+liberates the developers while the GPL 2 liberates the code.
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (Darwin)
+
+iD8DBQFFowsGwJCr4A9g8scRAgFlAJ4xlKv9dHkndb2uJ28BO/7tz6HOogCeITQ4
+MkjezQgqM1ehcLGriKCDpyo=
+=u066
+-----END PGP SIGNATURE-----
+
+
+From tpfennig at gmail.com  Tue Jan  9 11:25:24 2007
+From: tpfennig at gmail.com (Thilo Pfennig)
+Date: Tue, 9 Jan 2007 11:25:24 +0100
+Subject: [Libsecondlife-dev] kthx open source
+In-Reply-To: <BE8D34FB-3BC5-44B5-9A4E-B03ACFDF2DB2@secondlife.com>
+References: <Pine.LNX.4.58.0701081131380.1901@momos.pleiades.ca>
+	<fd9285740701080756g4a1e9972qd569cc172affd46@mail.gmail.com>
+	<45A28238.5050405@wsu.edu>
+	<2cbc44a0701081458h5bbf4d1aq8bbf3406f0bbbc06@mail.gmail.com>
+	<BE8D34FB-3BC5-44B5-9A4E-B03ACFDF2DB2@secondlife.com>
+Message-ID: <2cbc44a0701090225j5d0a91favbfb77e5cfec79a8c@mail.gmail.com>
+
+On 1/9/07, Phoenix <phoenix at secondlife.com> wrote:
+> I would argue that BSD
+> liberates the developers while the GPL 2 liberates the code.
+
+Interesting viewpoint.
+
+
+
+
+-- 
+Blog: http://vinci.wordpress.com
+Linked In: http://www.linkedin.com/in/tpfennig
+
+
+From tpfennig at gmail.com  Tue Jan  9 16:46:46 2007
+From: tpfennig at gmail.com (Thilo Pfennig)
+Date: Tue, 9 Jan 2007 16:46:46 +0100
+Subject: [Libsecondlife-dev] meeting
+Message-ID: <2cbc44a0701090746w6d3b595ck43f7ef539ac0f3fe@mail.gmail.com>
+
+I suggest we make a little meeting after the technical talk to day
+after Cory Lindens technical talk at 3pm. Amybe at Atlas 61,200 where
+there is a repeater. Or maybe choose yet another place spontaneously.
+
+Vinci
+
+-- 
+Blog: http://vinci.wordpress.com
+Linked In: http://www.linkedin.com/in/tpfennig
+
+
+From jhurliman at wsu.edu  Tue Jan  9 17:15:36 2007
+From: jhurliman at wsu.edu (John Hurliman)
+Date: Tue, 09 Jan 2007 08:15:36 -0800
+Subject: [Libsecondlife-dev] meeting
+In-Reply-To: <2cbc44a0701090746w6d3b595ck43f7ef539ac0f3fe@mail.gmail.com>
+References: <2cbc44a0701090746w6d3b595ck43f7ef539ac0f3fe@mail.gmail.com>
+Message-ID: <45A3BFA8.1020300@wsu.edu>
+
+Thilo Pfennig wrote:
+> I suggest we make a little meeting after the technical talk to day
+> after Cory Lindens technical talk at 3pm. Amybe at Atlas 61,200 where
+> there is a repeater. Or maybe choose yet another place spontaneously.
+>
+> Vinci
+>
+>   
+That would be a good idea, but most people are already familiar with our 
+plot in Hooper. Maybe we can start in Hooper and move if it gets crowded?
+
+John
+
+
+From tpfennig at gmail.com  Tue Jan  9 19:39:06 2007
+From: tpfennig at gmail.com (Thilo Pfennig)
+Date: Tue, 9 Jan 2007 19:39:06 +0100
+Subject: [Libsecondlife-dev] meeting
+In-Reply-To: <45A3BFA8.1020300@wsu.edu>
+References: <2cbc44a0701090746w6d3b595ck43f7ef539ac0f3fe@mail.gmail.com>
+	<45A3BFA8.1020300@wsu.edu>
+Message-ID: <2cbc44a0701091039p17e0bbbeucd6144068001eda3@mail.gmail.com>
+
+On 1/9/07, John Hurliman <jhurliman at wsu.edu> wrote:
+
+> That would be a good idea, but most people are already familiar with our
+> plot in Hooper. Maybe we can start in Hooper and move if it gets crowded?
+
+Ok. What adress?
+
+-- 
+Blog: http://vinci.wordpress.com
+Linked In: http://www.linkedin.com/in/tpfennig
+
+
+From baba at libsecondlife.org  Tue Jan  9 20:56:38 2007
+From: baba at libsecondlife.org (Baba)
+Date: Tue, 09 Jan 2007 11:56:38 -0800
+Subject: [Libsecondlife-dev] meeting
+In-Reply-To: <2cbc44a0701091039p17e0bbbeucd6144068001eda3@mail.gmail.com>
+References: <2cbc44a0701090746w6d3b595ck43f7ef539ac0f3fe@mail.gmail.com>	<45A3BFA8.1020300@wsu.edu>
+	<2cbc44a0701091039p17e0bbbeucd6144068001eda3@mail.gmail.com>
+Message-ID: <45A3F376.7010505@libsecondlife.org>
+
+Thilo Pfennig wrote:
+> On 1/9/07, John Hurliman <jhurliman at wsu.edu> wrote:
+>
+>   
+>> That would be a good idea, but most people are already familiar with our
+>> plot in Hooper. Maybe we can start in Hooper and move if it gets crowded?
+>>     
+>
+> Ok. What adress?
+>
+>   
+Search for the libsecondlife plot or use this slurl,
+<http://slurl.com/secondlife/Hooper/180/35/25>
+
+
+From jhurliman at wsu.edu  Sat Jan 13 02:49:51 2007
+From: jhurliman at wsu.edu (John Hurliman)
+Date: Fri, 12 Jan 2007 17:49:51 -0800
+Subject: [Libsecondlife-dev] mcortez: AppearanceManager issues
+Message-ID: <45A83ABF.5030000@wsu.edu>
+
+ERROR: Caught an exception in a packet callback: System.FormatException: 
+Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, 
+NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseSingle(String value, NumberStyles options, 
+NumberFormatInfo numfmt)
+   at System.Single.Parse(String s, NumberStyles style, NumberFormatInfo 
+info)
+   at System.Single.Parse(String s)
+   at libsecondlife.AssetSystem.AssetWearable.UpdateFromAssetData() in 
+H:\checkout\trunk\libsecondlife-cs\AssetSystem\AssetWearable.cs:line 317
+   at libsecondlife.AssetSystem.AssetWearable.SetAssetData(Byte[] data) 
+in H:\checkout\trunk\libsecondlife-cs\AssetSystem\AssetWearable.cs:line 393
+   at 
+libsecondlife.AssetSystem.AssetRequestDownload.AddDownloadedData(Int32 
+packetNum, Byte[] data) in 
+H:\checkout\trunk\libsecondlife-cs\AssetSystem\AssetRequest.cs:line 154
+   at 
+libsecondlife.AssetSystem.AssetManager.TransferPacketCallbackHandler(Packet 
+packet, Simulator simulator) in 
+H:\checkout\trunk\libsecondlife-cs\AssetSystem\AssetManager.cs:line 369
+   at libsecondlife.Simulator.OnReceivedData(IAsyncResult result) in 
+H:\checkout\trunk\libsecondlife-cs\NetworkManager.cs:line 569
+
+Any time you are parsing a number from a string you should sanity check 
+with exception handling around just that operation, or use a TryParse() 
+function. I have to run now otherwise I'd fix it, maybe I will get to it 
+later this evening.
+
+
+From admin at berlios.de  Sat Jan 13 03:50:17 2007
+From: admin at berlios.de (admin at berlios.de)
+Date: Fri, 12 Jan 2007 22:50:17 -0400 (AST)
+Subject: [Libsecondlife-dev] [Bug #9863] Rename Logout to RequestLogout and
+	add a blocking Logout
+Message-ID: <200701130250.l0D2oH8R022906@unicorn.berlios.de>
+
+Bug #9863, was updated on 2007-Jan-04 05:19
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: None
+Status: Closed
+Resolution: Fixed
+Bug Group: Incomplete Code
+Priority: 3
+Submitted by: jhurliman
+Assigned to : otakup0pe
+Summary: Rename Logout to RequestLogout and add a blocking Logout
+
+Details: The NetworkManager.Logout function currently does not block, but many example programs and applications are using it like it does. To follow the design of the rest of the library, this asynchronous function should be renamed to RequestLogout() and a Logout() function added that blocks with a ManualResetEvent and a timeout value added to Settings.
+
+Follow-Ups:
+
+Date: 2007-Jan-12 22:50
+By: otakup0pe
+
+Comment:
+I think I fixed it. Let's see if anyone notices.
+-------------------------------------------------------
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=9863&group_id=7710
+
+
+From mcortez at ogexchange.com  Sat Jan 13 04:30:36 2007
+From: mcortez at ogexchange.com (Michael Cortez)
+Date: Fri, 12 Jan 2007 19:30:36 -0800
+Subject: [Libsecondlife-dev] mcortez: AppearanceManager issues
+In-Reply-To: <45A83ABF.5030000@wsu.edu>
+References: <45A83ABF.5030000@wsu.edu>
+Message-ID: <45A8525C.1030303@ogexchange.com>
+
+> Any time you are parsing a number from a string you should sanity check 
+> with exception handling around just that operation, or use a TryParse() 
+> function. I have to run now otherwise I'd fix it, maybe I will get to it 
+> later this evening.
+
+Ayup!
+
+This the code for reading wearable assets was submitted by someone else, 
+I have yet to run into this particular error (I don't have any wearables 
+that exhibit it.)  If the wearable is copy'able I could use a copy of it 
+(dropped on Bot Ringo) so I can try to understand why the number isn't 
+where the decoder is expecting it.
+
+--
+Mike C.
+
+
+From jhurliman at wsu.edu  Sat Jan 13 05:54:35 2007
+From: jhurliman at wsu.edu (John Hurliman)
+Date: Fri, 12 Jan 2007 20:54:35 -0800
+Subject: [Libsecondlife-dev] mcortez: AppearanceManager issues
+In-Reply-To: <45A8525C.1030303@ogexchange.com>
+References: <45A83ABF.5030000@wsu.edu> <45A8525C.1030303@ogexchange.com>
+Message-ID: <45A8660B.6060206@wsu.edu>
+
+Michael Cortez wrote:
+>> Any time you are parsing a number from a string you should sanity check 
+>> with exception handling around just that operation, or use a TryParse() 
+>> function. I have to run now otherwise I'd fix it, maybe I will get to it 
+>> later this evening.
+>>     
+>
+> Ayup!
+>
+> This the code for reading wearable assets was submitted by someone else, 
+> I have yet to run into this particular error (I don't have any wearables 
+> that exhibit it.)  If the wearable is copy'able I could use a copy of it 
+> (dropped on Bot Ringo) so I can try to understand why the number isn't 
+> where the decoder is expecting it.
+>   
+
+I will see if I can get a copy of one of the outfits from the bot owner 
+(I just work here). Running 10 bots with 10 similar but different 
+outfits, and it seems that all 10 had the same error. Would it be easier 
+to change the line to spit debugging output if it has an error?
+
+John
+
+
+From mcortez at ogexchange.com  Sat Jan 13 06:39:27 2007
+From: mcortez at ogexchange.com (Michael Cortez)
+Date: Fri, 12 Jan 2007 21:39:27 -0800
+Subject: [Libsecondlife-dev] mcortez: AppearanceManager issues
+In-Reply-To: <45A8660B.6060206@wsu.edu>
+References: <45A83ABF.5030000@wsu.edu> <45A8525C.1030303@ogexchange.com>
+	<45A8660B.6060206@wsu.edu>
+Message-ID: <45A8708F.5060007@ogexchange.com>
+
+> I will see if I can get a copy of one of the outfits from the bot owner 
+> (I just work here). Running 10 bots with 10 similar but different 
+> outfits, and it seems that all 10 had the same error. Would it be easier 
+> to change the line to spit debugging output if it has an error?
+> 
+
+That would work fine.
+
+At some point there the asset's text is being broken up by some code 
+that Qode wrote.  I don't have a copy handy right now, but I believe it 
+starts chunking it with string splits.
+
+It would help if you could get an output of, I think the variable name 
+was: wholeEnchilada or something like that, as well as an error message 
+isolating what number/string it's choking on specifically.
+
+
+--
+Mike C.
+
+
+From admin at berlios.de  Sun Jan 14 05:05:30 2007
+From: admin at berlios.de (admin at berlios.de)
+Date: Sun, 14 Jan 2007 00:05:30 -0400 (AST)
+Subject: [Libsecondlife-dev] [Bug #9863] Rename Logout to RequestLogout and
+	add a blocking Logout
+Message-ID: <200701140405.l0E45Ueb010021@unicorn.berlios.de>
+
+Bug #9863, was updated on 2007-Jan-04 05:19
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: None
+Status: Closed
+Resolution: Works For Me
+Bug Group: Incomplete Code
+Priority: 3
+Submitted by: jhurliman
+Assigned to : otakup0pe
+Summary: Rename Logout to RequestLogout and add a blocking Logout
+
+Details: The NetworkManager.Logout function currently does not block, but many example programs and applications are using it like it does. To follow the design of the rest of the library, this asynchronous function should be renamed to RequestLogout() and a Logout() function added that blocks with a ManualResetEvent and a timeout value added to Settings.
+
+Follow-Ups:
+
+Date: 2007-Jan-14 00:05
+By: otakup0pe
+
+Comment:
+23:42 <@otakup0pe> while [ 1 ] ; do mono name2key.exe bot name password Copybot Hullabaloo ; done
+23:42 <@otakup0pe> i ran that for about three minutes and didn't see one blocked login
+-------------------------------------------------------
+
+Date: 2007-Jan-12 22:50
+By: otakup0pe
+
+Comment:
+I think I fixed it. Let's see if anyone notices.
+-------------------------------------------------------
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=9863&group_id=7710
+
+
+From omegaworks at gmail.com  Wed Jan 17 16:12:35 2007
+From: omegaworks at gmail.com (Christopher Omega)
+Date: Wed, 17 Jan 2007 09:12:35 -0600
+Subject: [Libsecondlife-dev] We ready for caps?
+Message-ID: <3897fb720701170712t170e1077i3a6b26b7c6b548d1@mail.gmail.com>
+
+So... after today's update will we just be needing a version number
+increment in our login code? :-)
+Lots of questions:
+How's caps support coming?
+Will the 1.13.2 viewer update obsolete all the old messaging code? If not,
+how much will it obsolete? Will the old code still work?
+
+My sincerest apologies if these have all been answered already.
+-Chris
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/libsecondlife-dev/attachments/20070117/3fd9406b/attachment.html>
+
+From mindtriggerz at gmail.com  Wed Jan 17 18:33:03 2007
+From: mindtriggerz at gmail.com (Jesse Nesbitt)
+Date: Wed, 17 Jan 2007 12:33:03 -0500
+Subject: [Libsecondlife-dev] We ready for caps?
+In-Reply-To: <3897fb720701170712t170e1077i3a6b26b7c6b548d1@mail.gmail.com>
+References: <3897fb720701170712t170e1077i3a6b26b7c6b548d1@mail.gmail.com>
+Message-ID: <eddb9050701170933q1d8b33bek4f430a70832d9d4f@mail.gmail.com>
+
+Old code should still work, the grid is supposedly running in
+compatibility mode where the old stuff still works. IIRC, region
+crossings are handled by CAPS, as well as map blocks. There's not much
+to break so far :D
+
+On 1/17/07, Christopher Omega <omegaworks at gmail.com> wrote:
+> So... after today's update will we just be needing a version number
+> increment in our login code? :-)
+> Lots of questions:
+> How's caps support coming?
+> Will the 1.13.2 viewer update obsolete all the old messaging code? If not,
+> how much will it obsolete? Will the old code still work?
+>
+> My sincerest apologies if these have all been answered already.
+> -Chris
+> _______________________________________________
+> Libsecondlife-dev mailing list
+> Libsecondlife-dev at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/libsecondlife-dev
+>
+>
+>
+
+
+-- 
+--Jesse
+
+
+From jmnews at wheep.de  Thu Jan 18 05:34:02 2007
+From: jmnews at wheep.de (jmnews)
+Date: Thu, 18 Jan 2007 05:34:02 +0100
+Subject: [Libsecondlife-dev] Teleporting after Update...
+Message-ID: <45AEF8BA.4080200@wheep.de>
+
+...doesn't work, neither with own apps nor with that Teleport.exe 
+example. What changed?
+
+
+From mcortez at ogexchange.com  Thu Jan 18 06:43:11 2007
+From: mcortez at ogexchange.com (Michael Cortez)
+Date: Wed, 17 Jan 2007 21:43:11 -0800
+Subject: [Libsecondlife-dev] Teleporting after Update...
+In-Reply-To: <45AEF8BA.4080200@wheep.de>
+References: <45AEF8BA.4080200@wheep.de>
+Message-ID: <45AF08EF.3090700@ogexchange.com>
+
+jmnews wrote:
+> ...doesn't work, neither with own apps nor with that Teleport.exe 
+> example. What changed?
+
+Looks like a necessary part of the teleport mechanism was switched to 
+require CAPS, and the main libsl trunk doesn't support that mechanism yet.
+
+--
+Mike Cortez
+
+
+
+From baba at libsecondlife.org  Thu Jan 18 08:42:02 2007
+From: baba at libsecondlife.org (Baba)
+Date: Wed, 17 Jan 2007 23:42:02 -0800
+Subject: [Libsecondlife-dev] Teleporting after Update...
+In-Reply-To: <45AF08EF.3090700@ogexchange.com>
+References: <45AEF8BA.4080200@wheep.de> <45AF08EF.3090700@ogexchange.com>
+Message-ID: <45AF24CA.5030505@libsecondlife.org>
+
+Michael Cortez wrote:
+> jmnews wrote:
+>> ...doesn't work, neither with own apps nor with that Teleport.exe 
+>> example. What changed?
+>
+> Looks like a necessary part of the teleport mechanism was switched to 
+> require CAPS, and the main libsl trunk doesn't support that mechanism yet.
+>
+> --
+> Mike Cortez
+
+Should be 100% fallback on the message system.  I would report it as a 
+bug if it's not accepting UDP messages for teleports.
+
+--
+Baba
+
+
+From jef at pleiades.ca  Thu Jan 18 08:48:45 2007
+From: jef at pleiades.ca (Jonathan Freedman)
+Date: Thu, 18 Jan 2007 03:48:45 -0400 (AST)
+Subject: [Libsecondlife-dev] Teleporting after Update...
+In-Reply-To: <45AF24CA.5030505@libsecondlife.org>
+References: <45AEF8BA.4080200@wheep.de> <45AF08EF.3090700@ogexchange.com>
+	<45AF24CA.5030505@libsecondlife.org>
+Message-ID: <Pine.LNX.4.58.0701180348001.5602@momos.pleiades.ca>
+
+libsl is waiting on a merge from our aditi branch. clients are supposed to
+fallback if CAPS is disabled, but that relies on the client being able to
+negotiate this fact with the sim. this code is in our aditi branch.
+
+eta : this "evening"
+
+Jonathan Freedman
+Vice President
+Pleiades Consulting
+(902) 444-4335 x400
+
+On Wed, 17 Jan 2007, Baba wrote:
+
+> Michael Cortez wrote:
+> > jmnews wrote:
+> >> ...doesn't work, neither with own apps nor with that Teleport.exe
+> >> example. What changed?
+> >
+> > Looks like a necessary part of the teleport mechanism was switched to
+> > require CAPS, and the main libsl trunk doesn't support that mechanism yet.
+> >
+> > --
+> > Mike Cortez
+>
+> Should be 100% fallback on the message system.  I would report it as a
+> bug if it's not accepting UDP messages for teleports.
+>
+> --
+> Baba
+> _______________________________________________
+> Libsecondlife-dev mailing list
+> Libsecondlife-dev at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/libsecondlife-dev
+>
+
+
+From donovan at lindenlab.com  Thu Jan 18 18:38:08 2007
+From: donovan at lindenlab.com (Donovan Preston)
+Date: Thu, 18 Jan 2007 09:38:08 -0800
+Subject: [Libsecondlife-dev] Teleporting after Update...
+In-Reply-To: <45AF24CA.5030505@libsecondlife.org>
+References: <45AEF8BA.4080200@wheep.de> <45AF08EF.3090700@ogexchange.com>
+	<45AF24CA.5030505@libsecondlife.org>
+Message-ID: <8F6166E7AEEF27965A81BBEF@pavel.lindenlab.com>
+
+
+
+--On January 17, 2007 11:42:02 PM -0800 Baba <baba at libsecondlife.org> wrote:
+
+> Michael Cortez wrote:
+>> jmnews wrote:
+>>> ...doesn't work, neither with own apps nor with that Teleport.exe
+>>> example. What changed?
+>>
+>> Looks like a necessary part of the teleport mechanism was switched to
+>> require CAPS, and the main libsl trunk doesn't support that mechanism
+>> yet.
+>>
+>> --
+>> Mike Cortez
+>
+> Should be 100% fallback on the message system.  I would report it as a
+> bug if it's not accepting UDP messages for teleports.
+
+Nope; on the server side we have the ability to fall back to the UDP 
+message for teleports. However, if caps are turned on in the server, you 
+have to use them to teleport. Sorry.
+
+Donovan
+
+
+
+From admin at berlios.de  Thu Jan 18 21:27:55 2007
+From: admin at berlios.de (admin at berlios.de)
+Date: Thu, 18 Jan 2007 14:27:55 -0600 (CST)
+Subject: [Libsecondlife-dev] [Bug #10049] Teleport
+Message-ID: <200701182027.l0IKRtfL025570@unicorn.berlios.de>
+
+Bug #10049, was updated on 2007-Jan-18 14:27
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: None
+Status: Open
+Resolution: None
+Bug Group: Feature Request
+Priority: 5
+Submitted by: mvoogd
+Assigned to : none
+Summary: Teleport
+
+Details: The Teleport is broken since the SL patch at 1/17/2007.
+The error message is: Couldn't find the region (name)
+This used to work before the patch.
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=10049&group_id=7710
+
+
+From admin at berlios.de  Fri Jan 19 11:55:19 2007
+From: admin at berlios.de (admin at berlios.de)
+Date: Fri, 19 Jan 2007 06:55:19 -0400 (AST)
+Subject: [Libsecondlife-dev] [Bug #10049] Teleport
+Message-ID: <200701191055.l0JAtJlq004118@unicorn.berlios.de>
+
+Bug #10049, was updated on 2007-Jan-18 16:27
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: None
+Status: None
+Resolution: None
+Bug Group: Feature Request
+Priority: 5
+Submitted by: mvoogd
+Assigned to : none
+Summary: Teleport
+
+Details: The Teleport is broken since the SL patch at 1/17/2007.
+The error message is: Couldn't find the region (name)
+This used to work before the patch.
+
+Follow-Ups:
+
+Date: 2007-Jan-19 06:55
+By: otakup0pe
+
+Comment:
+This is due to changes in the SL protocol, specifically the addition of CAPS. We had teleports working the preview grid, but it looks like some changes went live that did not see the public preview grid. As of now it is still broken.
+-------------------------------------------------------
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=10049&group_id=7710
+
+
+From admin at berlios.de  Fri Jan 19 14:32:57 2007
+From: admin at berlios.de (admin at berlios.de)
+Date: Fri, 19 Jan 2007 05:32:57 -0800 (PST)
+Subject: [Libsecondlife-dev] [Bug #10049] Teleport
+Message-ID: <200701191332.l0JDWvg2020798@unicorn.berlios.de>
+
+Bug #10049, was updated on 2007-Jan-18 12:27
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: agni
+Status: Open
+Resolution: None
+Bug Group: Buggy Code
+Priority: 8
+Submitted by: mvoogd
+Assigned to : otakup0pe
+Summary: Teleport
+
+Details: The Teleport is broken since the SL patch at 1/17/2007.
+The error message is: Couldn't find the region (name)
+This used to work before the patch.
+
+Follow-Ups:
+
+Date: 2007-Jan-19 05:32
+By: jhurliman
+
+Comment:
+I fixed the MapLayerRequest failing, it was an outdated message template. Everything is updated to the latest protocol but it looks like we're still having some issues with the Caps support so teleports don't complete and may leave avatars in limbo right now. I upgraded this to a high priority issue and hopefully it will be resolved soon.
+-------------------------------------------------------
+
+Date: 2007-Jan-19 02:55
+By: otakup0pe
+
+Comment:
+This is due to changes in the SL protocol, specifically the addition of CAPS. We had teleports working the preview grid, but it looks like some changes went live that did not see the public preview grid. As of now it is still broken.
+-------------------------------------------------------
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=10049&group_id=7710
+
+
+From admin at berlios.de  Fri Jan 19 14:34:19 2007
+From: admin at berlios.de (admin at berlios.de)
+Date: Fri, 19 Jan 2007 05:34:19 -0800 (PST)
+Subject: [Libsecondlife-dev] [Bug #9888] RegionHandle not being set
+	correctly in Simulator.Region
+Message-ID: <200701191334.l0JDYJ7f022094@unicorn.berlios.de>
+
+Bug #9888, was updated on 2007-Jan-06 16:44
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: aditi
+Status: Closed
+Resolution: Fixed
+Bug Group: Buggy Code
+Priority: 5
+Submitted by: mcortez
+Assigned to : none
+Summary: RegionHandle not being set correctly in Simulator.Region
+
+Details: The following code should return the same RegionHandle for all three variables:
+
+==========
+protected void Objects_OnNewPrim(Simulator simulator, PrimObject NewPrim, ulong regionHandle, ushort timeDilation)
+{
+Console.WriteLine("Sim:  " + simulator.Region.Handle);
+Console.WriteLine("Prim: " + NewPrim.RegionHandle);
+Console.WriteLine("RgnH: " + regionHandle);
+======
+
+However, when run inside hooper by a bot with latest SVN, the first handle returned by simulator.Region.Handle is not equal to the one returned by the other two variables.
+
+I'm not sure which set is incorrect.
+
+Follow-Ups:
+
+Date: 2007-Jan-19 05:34
+By: jhurliman
+
+Comment:
+Couple of things were going on here, should be all fixed up now.
+-------------------------------------------------------
+
+Date: 2007-Jan-06 19:31
+By: mcortez
+
+Comment:
+okay, the problem has been tracked down to the Region class inside of Simulator is not getting it's Region Handle set correctly.  And it's simply getting set to your avatar's home region handle.
+-------------------------------------------------------
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=9888&group_id=7710
+
+
+From admin at berlios.de  Fri Jan 19 14:35:28 2007
+From: admin at berlios.de (admin at berlios.de)
+Date: Fri, 19 Jan 2007 05:35:28 -0800 (PST)
+Subject: [Libsecondlife-dev] [Bug #9888] RegionHandle not being set
+	correctly in Simulator.Region
+Message-ID: <200701191335.l0JDZSS4023310@unicorn.berlios.de>
+
+Bug #9888, was updated on 2007-Jan-06 16:44
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: agni
+Status: Closed
+Resolution: Fixed
+Bug Group: Buggy Code
+Priority: 5
+Submitted by: mcortez
+Assigned to : jhurliman
+Summary: RegionHandle not being set correctly in Simulator.Region
+
+Details: The following code should return the same RegionHandle for all three variables:
+
+==========
+protected void Objects_OnNewPrim(Simulator simulator, PrimObject NewPrim, ulong regionHandle, ushort timeDilation)
+{
+Console.WriteLine("Sim:  " + simulator.Region.Handle);
+Console.WriteLine("Prim: " + NewPrim.RegionHandle);
+Console.WriteLine("RgnH: " + regionHandle);
+======
+
+However, when run inside hooper by a bot with latest SVN, the first handle returned by simulator.Region.Handle is not equal to the one returned by the other two variables.
+
+I'm not sure which set is incorrect.
+
+Follow-Ups:
+
+Date: 2007-Jan-19 05:35
+By: jhurliman
+
+Comment:
+Couple of things were going on here, should be all fixed up now.
+-------------------------------------------------------
+
+Date: 2007-Jan-06 19:31
+By: mcortez
+
+Comment:
+okay, the problem has been tracked down to the Region class inside of Simulator is not getting it's Region Handle set correctly.  And it's simply getting set to your avatar's home region handle.
+-------------------------------------------------------
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=9888&group_id=7710
+
+
+From admin at berlios.de  Fri Jan 19 14:36:07 2007
+From: admin at berlios.de (admin at berlios.de)
+Date: Fri, 19 Jan 2007 05:36:07 -0800 (PST)
+Subject: [Libsecondlife-dev] [Bug #9887] CAPS issue
+Message-ID: <200701191336.l0JDa7dh024104@unicorn.berlios.de>
+
+Bug #9887, was updated on 2007-Jan-06 16:37
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: agni
+Status: Open
+Resolution: None
+Bug Group: Buggy Code
+Priority: 2
+Submitted by: otakup0pe
+Assigned to : otakup0pe
+Summary: CAPS issue
+
+Details: In EventQueueGet: System.Net.WebException: The remote server returned an error:
+(502) Bad Gateway.
+   at System.Net.HttpWebRequest.GetResponse()
+   at libsecondlife.Caps.LLSDRequest(String uri, Object req) in C:\Documents and
+ Settings\jonathan\Desktop\libsl-aditi\libsecondlife-cs\NetworkManager.cs:line 6
+70
+   at libsecondlife.Caps.EventQueue() in C:\Documents and Settings\jonathan\Desk
+top\libsl-aditi\libsecondlife-cs\NetworkManager.cs:line 645
+
+Follow-Ups:
+
+Date: 2007-Jan-06 16:55
+By: otakup0pe
+
+Comment:
+Seems to be related to EventQueueGet based on CAPS URI
+-------------------------------------------------------
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=9887&group_id=7710
+
+
+From admin at berlios.de  Fri Jan 19 22:45:55 2007
+From: admin at berlios.de (admin at berlios.de)
+Date: Fri, 19 Jan 2007 17:45:55 -0400 (AST)
+Subject: [Libsecondlife-dev] [Bug #10049] Teleport
+Message-ID: <200701192145.l0JLjt6h029915@unicorn.berlios.de>
+
+Bug #10049, was updated on 2007-Jan-18 16:27
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: agni
+Status: Closed
+Resolution: None
+Bug Group: Buggy Code
+Priority: 8
+Submitted by: mvoogd
+Assigned to : otakup0pe
+Summary: Teleport
+
+Details: The Teleport is broken since the SL patch at 1/17/2007.
+The error message is: Couldn't find the region (name)
+This used to work before the patch.
+
+Follow-Ups:
+
+Date: 2007-Jan-19 17:45
+By: otakup0pe
+
+Comment:
+Fixed in r862
+-------------------------------------------------------
+
+Date: 2007-Jan-19 09:32
+By: jhurliman
+
+Comment:
+I fixed the MapLayerRequest failing, it was an outdated message template. Everything is updated to the latest protocol but it looks like we're still having some issues with the Caps support so teleports don't complete and may leave avatars in limbo right now. I upgraded this to a high priority issue and hopefully it will be resolved soon.
+-------------------------------------------------------
+
+Date: 2007-Jan-19 06:55
+By: otakup0pe
+
+Comment:
+This is due to changes in the SL protocol, specifically the addition of CAPS. We had teleports working the preview grid, but it looks like some changes went live that did not see the public preview grid. As of now it is still broken.
+-------------------------------------------------------
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=10049&group_id=7710
+
+
+From jhurliman at wsu.edu  Sat Jan 20 06:57:23 2007
+From: jhurliman at wsu.edu (John Hurliman)
+Date: Fri, 19 Jan 2007 21:57:23 -0800
+Subject: [Libsecondlife-dev] AppearanceManager, NullReferenceException
+Message-ID: <45B1AF43.7040309@wsu.edu>
+
+ERROR: Caught an exception in a packet callback: 
+System.NullReferenceException: Object reference not set to an instance 
+of an object.
+   at 
+libsecondlife.AssetSystem.AppearanceManager.AgentWearablesUpdateCallbackHandler(Packet 
+packet, Simulator simulator) in 
+H:\checkout\trunk\libsecondlife-cs\AssetSystem\AppearanceManager.cs:line 440
+   at libsecondlife.Simulator.OnReceivedData(IAsyncResult result) in 
+H:\checkout\trunk\libsecondlife-cs\NetworkManager.cs:line 713
+
+Got this after sending out an AgentWearablesRequest from a separate system.
+
+
+From admin at berlios.de  Sat Jan 20 07:54:22 2007
+From: admin at berlios.de (admin at berlios.de)
+Date: Sat, 20 Jan 2007 00:54:22 -0600 (CST)
+Subject: [Libsecondlife-dev] [Bug #10072] Teleport Issue
+Message-ID: <200701200654.l0K6sMTp013862@unicorn.berlios.de>
+
+Bug #10072, was updated on 2007-Jan-20 00:54
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: libsl
+Status: Open
+Resolution: None
+Bug Group: Buggy Code
+Priority: 5
+Submitted by: mvoogd
+Assigned to : none
+Summary: Teleport Issue
+
+Details: 
+The teleport still doesnt work for me. This is what I get
+after the Client.Self.Teleport( region, pos ) command:
+
+INFO: Teleporting to region 1119302837307136
+ERROR: System.ArgumentOutOfRangeException: Specified argument was out of the range of valid values. 
+Parameter name: newAddress
+  at System.Net.IPAddress..ctor(Int64 newAddress)
+  at libsecondlife.MainAvatar.TeleportHandler(Packer packet, Simulator simulator )
+  at libsecondlife.MainAvatar.EventQueueHandler(String message, Object body)
+  at libsecondlife.Caps.EventQueue()
+
+
+Any suggestions? :)
+
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=10072&group_id=7710
+
+
+From admin at berlios.de  Sat Jan 20 08:16:24 2007
+From: admin at berlios.de (admin at berlios.de)
+Date: Sat, 20 Jan 2007 03:16:24 -0400 (AST)
+Subject: [Libsecondlife-dev] [Bug #10072] Teleport Issue
+Message-ID: <200701200716.l0K7GO4s014806@unicorn.berlios.de>
+
+Bug #10072, was updated on 2007-Jan-20 02:54
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: libsl
+Status: Open
+Resolution: None
+Bug Group: Buggy Code
+Priority: 5
+Submitted by: mvoogd
+Assigned to : otakup0pe
+Summary: Teleport Issue
+
+Details: 
+The teleport still doesnt work for me. This is what I get
+after the Client.Self.Teleport( region, pos ) command:
+
+INFO: Teleporting to region 1119302837307136
+ERROR: System.ArgumentOutOfRangeException: Specified argument was out of the range of valid values. 
+Parameter name: newAddress
+  at System.Net.IPAddress..ctor(Int64 newAddress)
+  at libsecondlife.MainAvatar.TeleportHandler(Packer packet, Simulator simulator )
+  at libsecondlife.MainAvatar.EventQueueHandler(String message, Object body)
+  at libsecondlife.Caps.EventQueue()
+
+
+Any suggestions? :)
+
+
+Follow-Ups:
+
+Date: 2007-Jan-20 03:16
+By: otakup0pe
+
+Comment:
+What are you using for your dev environment ? It is working for me on osX / mono and for someone else on C# express on XP
+-------------------------------------------------------
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=10072&group_id=7710
+
+
+From admin at berlios.de  Sat Jan 20 08:17:17 2007
+From: admin at berlios.de (admin at berlios.de)
+Date: Sat, 20 Jan 2007 03:17:17 -0400 (AST)
+Subject: [Libsecondlife-dev] [Bug #10072] Teleport Issue
+Message-ID: <200701200717.l0K7HH2H015736@unicorn.berlios.de>
+
+Bug #10072, was updated on 2007-Jan-20 02:54
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: libsl
+Status: Open
+Resolution: Works For Me
+Bug Group: Buggy Code
+Priority: 5
+Submitted by: mvoogd
+Assigned to : otakup0pe
+Summary: Teleport Issue
+
+Details: 
+The teleport still doesnt work for me. This is what I get
+after the Client.Self.Teleport( region, pos ) command:
+
+INFO: Teleporting to region 1119302837307136
+ERROR: System.ArgumentOutOfRangeException: Specified argument was out of the range of valid values. 
+Parameter name: newAddress
+  at System.Net.IPAddress..ctor(Int64 newAddress)
+  at libsecondlife.MainAvatar.TeleportHandler(Packer packet, Simulator simulator )
+  at libsecondlife.MainAvatar.EventQueueHandler(String message, Object body)
+  at libsecondlife.Caps.EventQueue()
+
+
+Any suggestions? :)
+
+
+Follow-Ups:
+
+Date: 2007-Jan-20 03:16
+By: otakup0pe
+
+Comment:
+What are you using for your dev environment ? It is working for me on osX / mono and for someone else on C# express on XP
+-------------------------------------------------------
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=10072&group_id=7710
+
+
+From admin at berlios.de  Sat Jan 20 10:15:21 2007
+From: admin at berlios.de (admin at berlios.de)
+Date: Sat, 20 Jan 2007 01:15:21 -0800 (PST)
+Subject: [Libsecondlife-dev] [Bug #10072] Teleport Issue
+Message-ID: <200701200915.l0K9FL4R002298@unicorn.berlios.de>
+
+Bug #10072, was updated on 2007-Jan-19 22:54
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: libsl
+Status: Open
+Resolution: None
+Bug Group: Buggy Code
+Priority: 8
+Submitted by: mvoogd
+Assigned to : otakup0pe
+Summary: Teleport Issue
+
+Details: 
+The teleport still doesnt work for me. This is what I get
+after the Client.Self.Teleport( region, pos ) command:
+
+INFO: Teleporting to region 1119302837307136
+ERROR: System.ArgumentOutOfRangeException: Specified argument was out of the range of valid values. 
+Parameter name: newAddress
+  at System.Net.IPAddress..ctor(Int64 newAddress)
+  at libsecondlife.MainAvatar.TeleportHandler(Packer packet, Simulator simulator )
+  at libsecondlife.MainAvatar.EventQueueHandler(String message, Object body)
+  at libsecondlife.Caps.EventQueue()
+
+
+Any suggestions? :)
+
+
+Follow-Ups:
+
+Date: 2007-Jan-20 01:15
+By: jhurliman
+
+Comment:
+Getting closer, I fixed an endian issue in the teleport routine. Still can't successfully teleport though, not sure what's going on. Do we have to do something different now?
+-------------------------------------------------------
+
+Date: 2007-Jan-19 23:16
+By: otakup0pe
+
+Comment:
+What are you using for your dev environment ? It is working for me on osX / mono and for someone else on C# express on XP
+-------------------------------------------------------
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=10072&group_id=7710
+
+
+From admin at berlios.de  Sat Jan 20 10:16:17 2007
+From: admin at berlios.de (admin at berlios.de)
+Date: Sat, 20 Jan 2007 01:16:17 -0800 (PST)
+Subject: [Libsecondlife-dev] [Bug #10072] Teleport Issue
+Message-ID: <200701200916.l0K9GHwW003276@unicorn.berlios.de>
+
+Bug #10072, was updated on 2007-Jan-19 22:54
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: libsl
+Status: Open
+Resolution: None
+Bug Group: Buggy Code
+Priority: 8
+Submitted by: mvoogd
+Assigned to : otakup0pe
+Summary: Teleport Issue
+
+Details: 
+The teleport still doesnt work for me. This is what I get
+after the Client.Self.Teleport( region, pos ) command:
+
+INFO: Teleporting to region 1119302837307136
+ERROR: System.ArgumentOutOfRangeException: Specified argument was out of the range of valid values. 
+Parameter name: newAddress
+  at System.Net.IPAddress..ctor(Int64 newAddress)
+  at libsecondlife.MainAvatar.TeleportHandler(Packer packet, Simulator simulator )
+  at libsecondlife.MainAvatar.EventQueueHandler(String message, Object body)
+  at libsecondlife.Caps.EventQueue()
+
+
+Any suggestions? :)
+
+
+Follow-Ups:
+
+Date: 2007-Jan-20 01:16
+By: jhurliman
+
+Comment:
+Getting closer, I fixed an endian issue in the teleport routine. Still can't successfully teleport though, not sure what's going on. Do we have to do something different now?
+-------------------------------------------------------
+
+Date: 2007-Jan-19 23:16
+By: otakup0pe
+
+Comment:
+What are you using for your dev environment ? It is working for me on osX / mono and for someone else on C# express on XP
+-------------------------------------------------------
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=10072&group_id=7710
+
+
+From admin at berlios.de  Sat Jan 20 11:14:10 2007
+From: admin at berlios.de (admin at berlios.de)
+Date: Sat, 20 Jan 2007 02:14:10 -0800 (PST)
+Subject: [Libsecondlife-dev] [Bug #10072] Teleport Issue
+Message-ID: <200701201014.l0KAEAji003005@unicorn.berlios.de>
+
+Bug #10072, was updated on 2007-Jan-19 22:54
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: libsl
+Status: Closed
+Resolution: Works For Me
+Bug Group: Buggy Code
+Priority: 8
+Submitted by: mvoogd
+Assigned to : jhurliman
+Summary: Teleport Issue
+
+Details: 
+The teleport still doesnt work for me. This is what I get
+after the Client.Self.Teleport( region, pos ) command:
+
+INFO: Teleporting to region 1119302837307136
+ERROR: System.ArgumentOutOfRangeException: Specified argument was out of the range of valid values. 
+Parameter name: newAddress
+  at System.Net.IPAddress..ctor(Int64 newAddress)
+  at libsecondlife.MainAvatar.TeleportHandler(Packer packet, Simulator simulator )
+  at libsecondlife.MainAvatar.EventQueueHandler(String message, Object body)
+  at libsecondlife.Caps.EventQueue()
+
+
+Any suggestions? :)
+
+
+Follow-Ups:
+
+Date: 2007-Jan-20 02:14
+By: jhurliman
+
+Comment:
+Ok, it should be fixed in the latest commit. Try it out and if you still have problems reopen the bug.
+-------------------------------------------------------
+
+Date: 2007-Jan-20 01:16
+By: jhurliman
+
+Comment:
+Getting closer, I fixed an endian issue in the teleport routine. Still can't successfully teleport though, not sure what's going on. Do we have to do something different now?
+-------------------------------------------------------
+
+Date: 2007-Jan-19 23:16
+By: otakup0pe
+
+Comment:
+What are you using for your dev environment ? It is working for me on osX / mono and for someone else on C# express on XP
+-------------------------------------------------------
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=10072&group_id=7710
+
+
+From admin at berlios.de  Sat Jan 20 11:15:43 2007
+From: admin at berlios.de (admin at berlios.de)
+Date: Sat, 20 Jan 2007 02:15:43 -0800 (PST)
+Subject: [Libsecondlife-dev] [Bug #9887] CAPS issue
+Message-ID: <200701201015.l0KAFhxo004478@unicorn.berlios.de>
+
+Bug #9887, was updated on 2007-Jan-06 16:37
+Here is a current snapshot of the bug.
+
+Project: libsecondlife
+Category: agni
+Status: Closed
+Resolution: Works For Me
+Bug Group: Buggy Code
+Priority: 2
+Submitted by: otakup0pe
+Assigned to : otakup0pe
+Summary: CAPS issue
+
+Details: In EventQueueGet: System.Net.WebException: The remote server returned an error:
+(502) Bad Gateway.
+   at System.Net.HttpWebRequest.GetResponse()
+   at libsecondlife.Caps.LLSDRequest(String uri, Object req) in C:\Documents and
+ Settings\jonathan\Desktop\libsl-aditi\libsecondlife-cs\NetworkManager.cs:line 6
+70
+   at libsecondlife.Caps.EventQueue() in C:\Documents and Settings\jonathan\Desk
+top\libsl-aditi\libsecondlife-cs\NetworkManager.cs:line 645
+
+Follow-Ups:
+
+Date: 2007-Jan-20 02:15
+By: jhurliman
+
+Comment:
+This stopped happening one day, the consensus was that it was something at LL's end that is fixed now. Works for me.
+-------------------------------------------------------
+
+Date: 2007-Jan-06 16:55
+By: otakup0pe
+
+Comment:
+Seems to be related to EventQueueGet based on CAPS URI
+-------------------------------------------------------
+
+For detailed info, follow this link:
+http://developer.berlios.de/bugs/?func=detailbug&bug_id=9887&group_id=7710
+
+

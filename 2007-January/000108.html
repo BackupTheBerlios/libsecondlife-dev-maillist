@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Libsecondlife-dev] Packet Scripts vs. LSL Scripts
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/libsecondlife-dev/2007-January/index.html" >
+   <LINK REL="made" HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20Packet%20Scripts%20vs.%20LSL%20Scripts&In-Reply-To=%3C45985387.9010203%40wsu.edu%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000109.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Libsecondlife-dev] Packet Scripts vs. LSL Scripts</H1>
+    <B>John Hurliman</B> 
+    <A HREF="mailto:libsecondlife-dev%40lists.berlios.de?Subject=Re%3A%20%5BLibsecondlife-dev%5D%20Packet%20Scripts%20vs.%20LSL%20Scripts&In-Reply-To=%3C45985387.9010203%40wsu.edu%3E"
+       TITLE="[Libsecondlife-dev] Packet Scripts vs. LSL Scripts">jhurliman at wsu.edu
+       </A><BR>
+    <I>Mon Jan  1 01:19:19 CET 2007</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000109.html">[Libsecondlife-dev] [Bug #9863] Rename Logout to RequestLogout and	add a blocking Logout
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#108">[ date ]</a>
+              <a href="thread.html#108">[ thread ]</a>
+              <a href="subject.html#108">[ subject ]</a>
+              <a href="author.html#108">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE><A HREF="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">sbg at acw.com</A> wrote:
+&gt;<i> Does the term &quot;Script&quot; in such message names as:
+</I>&gt;<i>
+</I>&gt;<i> ScriptAnswerYes
+</I>&gt;<i> ScriptQuestion
+</I>&gt;<i> ScriptControlChange
+</I>&gt;<i> ForceScriptControlRelease
+</I>&gt;<i> SetScriptRunning
+</I>&gt;<i> ScriptReset
+</I>&gt;<i> RezScript
+</I>&gt;<i>
+</I>&gt;<i> ScriptDialogReply
+</I>&gt;<i> ScriptDialog
+</I>&gt;<i>
+</I>&gt;<i> have any relationship to LSL scripts?  If so, since ScriptDialog is
+</I>&gt;<i> sim-&gt;viewer and ScriptDialogReply is viewer-&gt;sim, does this mean that
+</I>&gt;<i> a sim can trigger the running LSL script on a viewer and retrieve
+</I>&gt;<i> the results?
+</I>&gt;<i>
+</I>&gt;<i> Also if so, does RezScript mean a sim can inject an LSL script into
+</I>&gt;<i> an object and then run it as above?
+</I>&gt;<i>
+</I>&gt;<i> Thanks for any insight.
+</I>&gt;<i>
+</I>&gt;<i> Cheers, Scott
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>
+ScriptDialog / ScriptDialogReply are for dialog boxes created by scripts 
+that ask an avatar a question and the avatar presses a button to reply. 
+The viewer doesn't have an LSL interpreter and no actual LSL bytecode is 
+ever sent to viewers, scripts are all run on the simulators. If I recall 
+RezScript was a viewer-&gt;sim command that tells the sim to instantiate a 
+script that's been put in to the inventory of an object in a simulator, 
+but I'm not positive. You can find a lot of this out with SLProxy and 
+some trial and error.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000109.html">[Libsecondlife-dev] [Bug #9863] Rename Logout to RequestLogout and	add a blocking Logout
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#108">[ date ]</a>
+              <a href="thread.html#108">[ thread ]</a>
+              <a href="subject.html#108">[ subject ]</a>
+              <a href="author.html#108">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/libsecondlife-dev">More information about the Libsecondlife-dev
+mailing list</a><br>
+</body></html>
